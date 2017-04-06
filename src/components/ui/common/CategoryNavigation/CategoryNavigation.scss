@@ -1,0 +1,73 @@
+@import '../../../styles/extends/typography.scss';
+@import '../../../styles/extends/flex.scss';
+@import '../../../styles/common.scss';
+
+.root {
+    background-color: $gray-extra-light-color;
+}
+
+.row {
+    @extend .flex-row;
+    height: 70px;
+    margin: 0 10% 0 10%;
+    @media #{$media-mobile} {
+        flex-flow: row wrap;
+         align-content: space-between;
+         justify-content: space-between;
+         height: 100%;
+         padding: 6px 0 18px;
+         margin: 0;
+    }
+}
+
+.contentLeft {
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.contentCenter {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contentRight {
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.equal {
+    display: flex;
+    flex: 1 0 100px;
+    @media #{$media-mobile} {
+    }
+}
+
+.link {
+    @extend .unselectable;
+    line-height:25px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-size: 14px;
+    transition: all .2s;
+
+    &:hover {
+       opacity: 0.5;
+    }
+}
+
+.active {
+    font-weight: 600;
+    color: $blue-color;
+}
+
+.linkWrapper {
+    padding: 0 20px 0 20px;
+
+    &:first-child {
+        padding-left: 0;
+    }
+
+    @media #{$media-mobile} {
+        padding: 12px 8px 0px 8px;
+    }
+}

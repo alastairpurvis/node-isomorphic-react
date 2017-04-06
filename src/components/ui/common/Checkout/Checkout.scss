@@ -1,0 +1,56 @@
+@import '../../../styles/common.scss';
+@import '../../../styles/extends/flex.scss';
+
+.header {
+    @extend .flex-row;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 60px;
+    padding: 20px 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    letter-spacing: 1px;
+    width: 200px !important;
+    display: inline-block;
+    transition: all .2s;
+
+    &:hover {
+       opacity: 0.6;
+    }
+}
+
+.backLink {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.leftColumn {
+    flex: 1 1 100%;
+}
+
+.rightColumn {
+    @media #{$media-desktop} {
+        flex: 1 0 370px;
+    }
+
+    @media #{$media-desktop-large} {
+        flex: 1 0 400px;
+    }
+}
+
+.orderForm{
+    @extend .flex-column;
+}
+
+.controls {
+    @media #{$media-mobile} {
+        display: none;
+    }
+}
+
+.marginTop {
+    margin-top: 15px;
+}

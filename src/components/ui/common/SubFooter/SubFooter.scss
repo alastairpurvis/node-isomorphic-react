@@ -1,0 +1,76 @@
+@import '../../../styles/extends/typography.scss';
+@import '../../../styles/extends/flex.scss';
+@import '../../../styles/common.scss';
+
+
+.root {
+    font-size: 12px;
+}
+
+.row {
+    @extend .flex-row;
+    padding: 40px 0 40px;
+     @media #{$media-mobile} {
+        padding: 15px 0 15px;
+     }
+}
+
+.high {
+    line-height: 34px;
+}
+
+.spaceBetween {
+    justify-content: space-between;
+}
+
+.contentCentered {
+    align-items: center;
+    justify-content: center;
+}
+
+.contentLeft {
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.contentRight {
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.equal {
+    display: flex;
+    flex: 1 0 100px;
+}
+
+.pad {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.link {
+    @extend .unselectable;
+    line-height: 40px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.linkWrapper {
+    padding: 0 10px 0 10px;
+
+    &:first-child {
+        padding-left: 0;
+    }
+
+    @media #{$media-mobile} {
+        padding-left: 0;
+    }
+}
+
+
+.icon {
+    display: inline-block;
+    margin: 0 15px 0 0;
+}

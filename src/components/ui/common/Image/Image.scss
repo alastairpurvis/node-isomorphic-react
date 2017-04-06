@@ -1,0 +1,21 @@
+@import '../../../styles/common.scss';
+@import '../../../styles/extends/typography.scss';
+
+.root {
+    @extend .unselectable;
+
+    max-width: 100%;
+    height: auto;
+}
+
+.productThumb {
+    max-height: 270px !important;
+    transition:.3s;
+
+    &:hover {
+        opacity:.7;
+    }
+}
+.productImage {
+    max-height: 540px !important;
+}
