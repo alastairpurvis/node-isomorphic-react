@@ -119,6 +119,6 @@
     "build": "babel-node tools/run build",
     "api": "babel-node servers/api/index.js",
     "dev": "babel-node tools/run start",
-    "start": "./node_modules/.bin/babel-node servers/api/index.js"
+    "start": "node build/static-server.js & ./node_modules/.bin/babel-node servers/api/index.js"
   }
 }
