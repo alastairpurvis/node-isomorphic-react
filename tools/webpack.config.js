@@ -229,6 +229,5 @@ const
 
 export default [
     clientConfig,
-    staticServerConfig,
-    apiServerConfig
+    staticServerConfig
 ];

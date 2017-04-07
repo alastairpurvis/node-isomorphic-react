@@ -6,7 +6,7 @@
     "npm": ">=3.3 <4"
   },
   "dependencies": {
-    "aws-sdk": "^2.39.0",
+    "aws-sdk": "^2.6.9",
     "babel-polyfill": "6.6.1",
     "babel-runtime": "6.6.1",
     "bluebird": "3.3.3",
@@ -53,7 +53,7 @@
   "devDependencies": {
     "assets-webpack-plugin": "^3.3.0",
     "autoprefixer": "^6.3.3",
-    "babel-cli": "^6.24.0",
+    "babel-cli": "^6.6.0",
     "babel-eslint": "^5.0.4",
     "babel-loader": "^6.2.4",
     "babel-plugin-espower": "^2.3.1",
@@ -119,6 +119,6 @@
     "build": "babel-node tools/run build",
     "api": "babel-node servers/api/index.js",
     "dev": "babel-node tools/run start",
-    "start": "node build/static-server.js & ./node_modules/.bin/babel-node servers/api/index.js"
+    "start": "node build/static-server.js"
   }
 }

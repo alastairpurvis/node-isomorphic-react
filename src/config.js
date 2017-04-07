@@ -25,13 +25,13 @@
 import { canUseDOM } from './utils/env';
 
 export const
-    baseUrl = process.env.HOST || (canUseDOM && window.env && window.env.HOST) || 'http://localhost:8080',
+    baseUrl = process.env.HOST || (canUseDOM && window.env && window.env.HOST) || 'http://localhost:7000',
     siteName = 'Skin Moderne',
     facebook = {
         APP_ID: '<your_facebook_app_id>'
     },
     api = {
-        URL: process.env.API_URL || (canUseDOM && window.env && window.env.API_URL) || 'http://localhost:4001',
+        URL: baseUrl,
         VERSION: '/api'
     },
     pagination = {
@@ -45,6 +45,7 @@ export const
         PRODUCT: '/product',
         CATEGORY: '/category',
         CATALOG: '/catalog',
+        CART: '/cart',
         CHECKOUT: '/checkout',
         SUPPORT: '/support',
         LOGIN: '/login',

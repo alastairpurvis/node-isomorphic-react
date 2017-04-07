@@ -128,6 +128,7 @@ function callback(req, res) {
 }
 
 function store(server) {
+
     // Categories
     server
         .route(API_PATH + '/categories')
