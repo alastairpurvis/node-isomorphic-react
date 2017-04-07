@@ -464,7 +464,7 @@ module.exports =
   Object.defineProperty(exports, "__esModule", {
       value: true
   });
-  exports.deliveryRegions = exports.mobilePagesWithBackIcon = exports.mobilePagesWithFooter = exports.emptyLayoutPages = exports.routes = exports.mail = exports.pagination = exports.api = exports.facebook = exports.siteName = exports.baseUrl = undefined;
+  exports.deliveryRegions = exports.mobilePagesWithBackIcon = exports.mobilePagesWithFooter = exports.emptyLayoutPages = exports.routes = exports.mail = exports.pagination = exports.api = exports.facebook = exports.siteName = exports.baseUrl = exports.PORT = exports.HOST = undefined;
   
   var _defineProperty2 = __webpack_require__(13);
   
@@ -498,7 +498,9 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
-  var baseUrl = exports.baseUrl = process.env.HOST || _env.canUseDOM && window.env && window.env.HOST || 'http://localhost:7000',
+  var HOST = exports.HOST = process.env.HOST || 'http://localhost',
+      PORT = exports.PORT = process.env.PORT || 7000,
+      baseUrl = exports.baseUrl = HOST + ':' + PORT,
       siteName = exports.siteName = 'Skin Moderne',
       facebook = exports.facebook = {
       APP_ID: '<your_facebook_app_id>'
