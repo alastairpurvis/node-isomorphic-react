@@ -29,7 +29,7 @@ const
         },
         static: {
             HOST: process.env.HOST || 'http://localhost',
-            PORT: process.env.PORT || 7000
+            PORT: process.env.PORT || 5000
         }
     };
 

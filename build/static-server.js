@@ -498,8 +498,8 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
-  var HOST = exports.HOST = process.env.HOST || process.env.BASE_URI || 'http://localhost:7000',
-      PORT = exports.PORT = process.env.PORT || 7000,
+  var HOST = exports.HOST = process.env.HOST || process.env.BASE_URI || 'http://localhost:5000',
+      PORT = exports.PORT = process.env.PORT || 5000,
       baseUrl = exports.baseUrl = HOST,
       siteName = exports.siteName = 'Skin Moderne',
       facebook = exports.facebook = {
@@ -7912,7 +7912,7 @@ module.exports =
       },
       static: {
           HOST: process.env.HOST || 'http://localhost',
-          PORT: process.env.PORT || 7000
+          PORT: process.env.PORT || 5000
       }
   };
   

@@ -25,8 +25,8 @@
 import { canUseDOM } from './utils/env';
 
 export const
-    HOST = process.env.HOST || process.env.BASE_URI || 'http://localhost:7000',
-    PORT = process.env.PORT || 7000,
+    HOST = process.env.HOST || process.env.BASE_URI || 'http://localhost:5000',
+    PORT = process.env.PORT || 5000,
     baseUrl = HOST,
     siteName = 'Skin Moderne',
     facebook = {
