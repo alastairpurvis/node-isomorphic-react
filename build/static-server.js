@@ -158,10 +158,10 @@ module.exports =
   global.navigator.userAgent = global.navigator.userAgent || 'all';
   
   // Register Node.js middleware
+  server.use((0, _compression2.default)());
   server.use(_express2.default.static(_path2.default.join(__dirname, 'public'), {
       maxAge: _config3.CACHE_MAX_AGE
   }));
-  server.use((0, _compression2.default)());
   server.use(_allowCrossDomain2.default);
   server.use(_allowMethods2.default);
   server.use((0, _cookieParser2.default)());

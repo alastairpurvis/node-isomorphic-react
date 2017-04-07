@@ -51,10 +51,10 @@ global.navigator = global.navigator || {};
 global.navigator.userAgent = global.navigator.userAgent || 'all';
 
 // Register Node.js middleware
+server.use(compression());
 server.use(express.static(path.join(__dirname, 'public'), {
     maxAge: CACHE_MAX_AGE
 }));
-server.use(compression());
 server.use(allowCrossDomain);
 server.use(allowMethods);
 server.use(cookieParser());
