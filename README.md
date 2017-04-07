@@ -52,15 +52,15 @@ Install external dependencies:
 
     yarn install
     
-Run API server (runs on port 4001, is available on http://localhost:4001/api):
-
-    yarn run api
-    
-Run static dev server (builds project and runs static server):
+Run static devevelopment server (builds project and runs static server locally):
 
     yarn dev
 
-Run production server (run yarn run build -- --release to build first):
+Build project for final production:
+
+    yarn run build -- --release --verbose
+
+Running production server:
 
     yarn start
 
