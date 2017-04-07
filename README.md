@@ -58,7 +58,7 @@ Run static devevelopment server (builds project and runs static server locally):
 
 Build project for final production:
 
-    yarn run build -- --release --verbose
+    yarn run build
 
 Running production server:
 

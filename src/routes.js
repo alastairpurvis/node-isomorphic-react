@@ -135,11 +135,13 @@ const router = new Router(on => {
 
     on(routes.CART, async({ params }) => <CartPage params={params} />);
 
-    on('*', async(state) => {
+    on('*', async({ path, context }) => {
+        context.executeAction('progress/show');
         const
-            query = `/graphql?query={content(path:"${state.path}"){path,title,content,component}}`,
+            query = `/graphql?query={content(path:"${path}"){path,title,content,component}}`,
             response = await staticService(query),
             { data } = await response.json();
+            await context.executeAction('progress/hide');
 
         return data && data.content && <ContentPage {...data.content} />;
     });

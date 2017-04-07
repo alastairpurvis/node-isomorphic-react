@@ -50,7 +50,7 @@ module.exports =
   
   __webpack_require__(438);
   
-  var _express = __webpack_require__(453);
+  var _express = __webpack_require__(454);
   
   var _express2 = _interopRequireDefault(_express);
   
@@ -58,17 +58,21 @@ module.exports =
   
   var _path2 = _interopRequireDefault(_path);
   
-  var _expressUseragent = __webpack_require__(455);
+  var _expressUseragent = __webpack_require__(456);
   
   var _expressUseragent2 = _interopRequireDefault(_expressUseragent);
   
-  var _cookieParser = __webpack_require__(447);
+  var _cookieParser = __webpack_require__(448);
   
   var _cookieParser2 = _interopRequireDefault(_cookieParser);
   
   var _bodyParser = __webpack_require__(446);
   
   var _bodyParser2 = _interopRequireDefault(_bodyParser);
+  
+  var _compression = __webpack_require__(447);
+  
+  var _compression2 = _interopRequireDefault(_compression);
   
   var _config = __webpack_require__(105);
   
@@ -96,7 +100,7 @@ module.exports =
   
   var _config3 = __webpack_require__(39);
   
-  var _cors = __webpack_require__(450);
+  var _cors = __webpack_require__(451);
   
   var _cors2 = _interopRequireDefault(_cors);
   
@@ -122,10 +126,6 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
-  var server = global.server = (0, _express2.default)();
-  
-  // Tell any CSS tooling (such as Material UI) to use all vendor prefixes if the
-  // user agent is not known.
   /**
    * MIT License
    *
@@ -150,24 +150,29 @@ module.exports =
    * SOFTWARE.
    */
   
+  var server = global.server = (0, _express2.default)();
+  
+  // Tell any CSS tooling (such as Material UI) to use all vendor prefixes if the
+  // user agent is not known.
   global.navigator = global.navigator || {};
   global.navigator.userAgent = global.navigator.userAgent || 'all';
   
   // Register Node.js middleware
-  server.use(_allowCrossDomain2.default);
-  server.use(_allowMethods2.default);
   server.use(_express2.default.static(_path2.default.join(__dirname, 'public'), {
       maxAge: _config3.CACHE_MAX_AGE
   }));
+  server.use((0, _compression2.default)());
+  server.use(_allowCrossDomain2.default);
+  server.use(_allowMethods2.default);
   server.use((0, _cookieParser2.default)());
   server.use(_bodyParser2.default.urlencoded({ extended: true }));
   server.use(_bodyParser2.default.json());
-  server.use(_bodyParser2.default.text());
   server.use('/token', _token2.default);
   server.use('/auth', _auth2.default);
+  (0, _store2.default)(server);
+  server.use(_bodyParser2.default.text());
   server.use('/graphql', (0, _cors2.default)(), _graphql2.default);
   server.use(_expressUseragent2.default.express());
-  (0, _store2.default)(server);
   server.get('*', _render2.default);
   server.use(_errorHandler2.default);
   
@@ -1256,7 +1261,7 @@ module.exports =
       value: true
   });
   
-  var _keyMirror = __webpack_require__(457);
+  var _keyMirror = __webpack_require__(458);
   
   var _keyMirror2 = _interopRequireDefault(_keyMirror);
   
@@ -1799,7 +1804,7 @@ module.exports =
   
   var _inherits3 = _interopRequireDefault(_inherits2);
   
-  var _eventemitter = __webpack_require__(452);
+  var _eventemitter = __webpack_require__(453);
   
   var _eventemitter2 = _interopRequireDefault(_eventemitter);
   
@@ -3709,7 +3714,7 @@ module.exports =
   });
   exports.Response = exports.Headers = exports.Request = exports.default = undefined;
   
-  var _nodeFetch = __webpack_require__(466);
+  var _nodeFetch = __webpack_require__(467);
   
   var _nodeFetch2 = _interopRequireDefault(_nodeFetch);
   
@@ -4003,7 +4008,7 @@ module.exports =
   
   var _fs = __webpack_require__(56);
   
-  var _handlebars = __webpack_require__(459);
+  var _handlebars = __webpack_require__(460);
   
   var _handlebars2 = _interopRequireDefault(_handlebars);
   
@@ -5970,15 +5975,15 @@ module.exports =
     value: true
   });
   
-  var _createBrowserHistory = __webpack_require__(460);
+  var _createBrowserHistory = __webpack_require__(461);
   
   var _createBrowserHistory2 = _interopRequireDefault(_createBrowserHistory);
   
-  var _createMemoryHistory = __webpack_require__(461);
+  var _createMemoryHistory = __webpack_require__(462);
   
   var _createMemoryHistory2 = _interopRequireDefault(_createMemoryHistory);
   
-  var _useQueries = __webpack_require__(462);
+  var _useQueries = __webpack_require__(463);
   
   var _useQueries2 = _interopRequireDefault(_useQueries);
   
@@ -6181,7 +6186,7 @@ module.exports =
     value: true
   });
   
-  var _smartMixin = __webpack_require__(474);
+  var _smartMixin = __webpack_require__(475);
   
   var _smartMixin2 = _interopRequireDefault(_smartMixin);
   
@@ -6430,7 +6435,7 @@ module.exports =
 /* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
-  module.exports = { "default": __webpack_require__(449), __esModule: true };
+  module.exports = { "default": __webpack_require__(450), __esModule: true };
 
 /***/ },
 /* 85 */
@@ -7528,7 +7533,7 @@ module.exports =
   
   var _constants = __webpack_require__(35);
   
-  var _htmlPdf = __webpack_require__(463);
+  var _htmlPdf = __webpack_require__(464);
   
   var _htmlPdf2 = _interopRequireDefault(_htmlPdf);
   
@@ -7646,7 +7651,7 @@ module.exports =
   
   var _Logger2 = _interopRequireDefault(_Logger);
   
-  var _schemaClient = __webpack_require__(472);
+  var _schemaClient = __webpack_require__(473);
   
   var _schemaClient2 = _interopRequireDefault(_schemaClient);
   
@@ -8327,7 +8332,7 @@ module.exports =
       value: true
   });
   
-  var _prettyError = __webpack_require__(467);
+  var _prettyError = __webpack_require__(468);
   
   var _prettyError2 = _interopRequireDefault(_prettyError);
   
@@ -8388,7 +8393,7 @@ module.exports =
     value: true
   });
   
-  var _expressGraphql = __webpack_require__(454);
+  var _expressGraphql = __webpack_require__(455);
   
   var _expressGraphql2 = _interopRequireDefault(_expressGraphql);
   
@@ -8507,7 +8512,7 @@ module.exports =
       };
   }();
   
-  var _server = __webpack_require__(469);
+  var _server = __webpack_require__(470);
   
   var _server2 = _interopRequireDefault(_server);
   
@@ -8655,7 +8660,7 @@ module.exports =
   
   var _createClass3 = _interopRequireDefault(_createClass2);
   
-  var _dispatchr = __webpack_require__(451);
+  var _dispatchr = __webpack_require__(452);
   
   var _dispatchr2 = _interopRequireDefault(_dispatchr);
   
@@ -8667,9 +8672,9 @@ module.exports =
   
   var _actions2 = _interopRequireDefault(_actions);
   
-  var _setimmediate = __webpack_require__(473);
+  var _setimmediate = __webpack_require__(474);
   
-  var _expressUseragent = __webpack_require__(456);
+  var _expressUseragent = __webpack_require__(457);
   
   var _cookie = __webpack_require__(48);
   
@@ -14025,7 +14030,7 @@ module.exports =
   
   var _colors = __webpack_require__(23);
   
-  var _reactOverlays = __webpack_require__(471);
+  var _reactOverlays = __webpack_require__(472);
   
   var _deliveryAddress = __webpack_require__(153);
   
@@ -19983,7 +19988,7 @@ module.exports =
   
   var _classnames2 = _interopRequireDefault(_classnames);
   
-  var _reactOnclickoutside = __webpack_require__(470);
+  var _reactOnclickoutside = __webpack_require__(471);
   
   var _reactOnclickoutside2 = _interopRequireDefault(_reactOnclickoutside);
   
@@ -20811,7 +20816,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _reactDom = __webpack_require__(468);
+  var _reactDom = __webpack_require__(469);
   
   var _reactMotion = __webpack_require__(96);
   
@@ -23103,15 +23108,15 @@ module.exports =
   
   var _bluebird2 = _interopRequireDefault(_bluebird);
   
-  var _jade = __webpack_require__(464);
+  var _jade = __webpack_require__(465);
   
   var _jade2 = _interopRequireDefault(_jade);
   
-  var _frontMatter = __webpack_require__(458);
+  var _frontMatter = __webpack_require__(459);
   
   var _frontMatter2 = _interopRequireDefault(_frontMatter);
   
-  var _markdownIt = __webpack_require__(465);
+  var _markdownIt = __webpack_require__(466);
   
   var _markdownIt2 = _interopRequireDefault(_markdownIt);
   
@@ -23816,28 +23821,36 @@ module.exports =
       }());
   
       on('*', function () {
-          var _ref23 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee16(state) {
-              var query, response, _ref24, data;
+          var _ref23 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee16(_ref24) {
+              var path = _ref24.path,
+                  context = _ref24.context;
+  
+              var query, response, _ref25, data;
   
               return _regenerator2.default.wrap(function _callee16$(_context16) {
                   while (1) {
                       switch (_context16.prev = _context16.next) {
                           case 0:
-                              query = '/graphql?query={content(path:"' + state.path + '"){path,title,content,component}}';
-                              _context16.next = 3;
+                              context.executeAction('progress/show');
+                              query = '/graphql?query={content(path:"' + path + '"){path,title,content,component}}';
+                              _context16.next = 4;
                               return (0, _static2.default)(query);
   
-                          case 3:
+                          case 4:
                               response = _context16.sent;
-                              _context16.next = 6;
+                              _context16.next = 7;
                               return response.json();
   
-                          case 6:
-                              _ref24 = _context16.sent;
-                              data = _ref24.data;
+                          case 7:
+                              _ref25 = _context16.sent;
+                              data = _ref25.data;
+                              _context16.next = 11;
+                              return context.executeAction('progress/hide');
+  
+                          case 11:
                               return _context16.abrupt('return', data && data.content && _react2.default.createElement(_ContentPage2.default, data.content));
   
-                          case 9:
+                          case 12:
                           case 'end':
                               return _context16.stop();
                       }
@@ -26116,7 +26129,7 @@ module.exports =
 /* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
-  module.exports = { "default": __webpack_require__(448), __esModule: true };
+  module.exports = { "default": __webpack_require__(449), __esModule: true };
 
 /***/ },
 /* 245 */
@@ -32300,166 +32313,172 @@ module.exports =
 /* 447 */
 /***/ function(module, exports) {
 
-  module.exports = require("cookie-parser");
+  module.exports = require("compression");
 
 /***/ },
 /* 448 */
 /***/ function(module, exports) {
 
-  module.exports = require("core-js/library/fn/get-iterator");
+  module.exports = require("cookie-parser");
 
 /***/ },
 /* 449 */
 /***/ function(module, exports) {
 
-  module.exports = require("core-js/library/fn/object/create");
+  module.exports = require("core-js/library/fn/get-iterator");
 
 /***/ },
 /* 450 */
 /***/ function(module, exports) {
 
-  module.exports = require("cors");
+  module.exports = require("core-js/library/fn/object/create");
 
 /***/ },
 /* 451 */
 /***/ function(module, exports) {
 
-  module.exports = require("dispatchr");
+  module.exports = require("cors");
 
 /***/ },
 /* 452 */
 /***/ function(module, exports) {
 
-  module.exports = require("eventemitter3");
+  module.exports = require("dispatchr");
 
 /***/ },
 /* 453 */
 /***/ function(module, exports) {
 
-  module.exports = require("express");
+  module.exports = require("eventemitter3");
 
 /***/ },
 /* 454 */
 /***/ function(module, exports) {
 
-  module.exports = require("express-graphql");
+  module.exports = require("express");
 
 /***/ },
 /* 455 */
 /***/ function(module, exports) {
 
-  module.exports = require("express-useragent");
+  module.exports = require("express-graphql");
 
 /***/ },
 /* 456 */
 /***/ function(module, exports) {
 
-  module.exports = require("express-useragent/lib/express-useragent");
+  module.exports = require("express-useragent");
 
 /***/ },
 /* 457 */
 /***/ function(module, exports) {
 
-  module.exports = require("fbjs/lib/keyMirror");
+  module.exports = require("express-useragent/lib/express-useragent");
 
 /***/ },
 /* 458 */
 /***/ function(module, exports) {
 
-  module.exports = require("front-matter");
+  module.exports = require("fbjs/lib/keyMirror");
 
 /***/ },
 /* 459 */
 /***/ function(module, exports) {
 
-  module.exports = require("handlebars");
+  module.exports = require("front-matter");
 
 /***/ },
 /* 460 */
 /***/ function(module, exports) {
 
-  module.exports = require("history/lib/createBrowserHistory");
+  module.exports = require("handlebars");
 
 /***/ },
 /* 461 */
 /***/ function(module, exports) {
 
-  module.exports = require("history/lib/createMemoryHistory");
+  module.exports = require("history/lib/createBrowserHistory");
 
 /***/ },
 /* 462 */
 /***/ function(module, exports) {
 
-  module.exports = require("history/lib/useQueries");
+  module.exports = require("history/lib/createMemoryHistory");
 
 /***/ },
 /* 463 */
 /***/ function(module, exports) {
 
-  module.exports = require("html-pdf");
+  module.exports = require("history/lib/useQueries");
 
 /***/ },
 /* 464 */
 /***/ function(module, exports) {
 
-  module.exports = require("jade");
+  module.exports = require("html-pdf");
 
 /***/ },
 /* 465 */
 /***/ function(module, exports) {
 
-  module.exports = require("markdown-it");
+  module.exports = require("jade");
 
 /***/ },
 /* 466 */
 /***/ function(module, exports) {
 
-  module.exports = require("node-fetch");
+  module.exports = require("markdown-it");
 
 /***/ },
 /* 467 */
 /***/ function(module, exports) {
 
-  module.exports = require("pretty-error");
+  module.exports = require("node-fetch");
 
 /***/ },
 /* 468 */
 /***/ function(module, exports) {
 
-  module.exports = require("react-dom");
+  module.exports = require("pretty-error");
 
 /***/ },
 /* 469 */
 /***/ function(module, exports) {
 
-  module.exports = require("react-dom/server");
+  module.exports = require("react-dom");
 
 /***/ },
 /* 470 */
 /***/ function(module, exports) {
 
-  module.exports = require("react-onclickoutside");
+  module.exports = require("react-dom/server");
 
 /***/ },
 /* 471 */
 /***/ function(module, exports) {
 
-  module.exports = require("react-overlays");
+  module.exports = require("react-onclickoutside");
 
 /***/ },
 /* 472 */
 /***/ function(module, exports) {
 
-  module.exports = require("schema-client");
+  module.exports = require("react-overlays");
 
 /***/ },
 /* 473 */
 /***/ function(module, exports) {
 
-  module.exports = require("setimmediate2");
+  module.exports = require("schema-client");
 
 /***/ },
 /* 474 */
+/***/ function(module, exports) {
+
+  module.exports = require("setimmediate2");
+
+/***/ },
+/* 475 */
 /***/ function(module, exports) {
 
   module.exports = require("smart-mixin");

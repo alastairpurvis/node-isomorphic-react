@@ -22,7 +22,6 @@
  * SOFTWARE.
  */
 
-import 'babel-polyfill';
 import ReactDOM from 'react-dom';
 import Router from './routes';
 import Location from './core/Location';
