@@ -25,7 +25,7 @@
 import { canUseDOM } from './utils/env';
 
 export const
-    HOST = process.env.HOST || process.env.BASE_URI || (canUseDOM && window.env && window.env.HOST) || 'http://localhost:5000',
+    HOST = process.env.HOST || process.env.BASE_URI || (canUseDOM && window.env && window.env.HOST) || 'https://calm-peak-82440.herokuapp.com/',
     PORT = process.env.PORT || 5000,
     baseUrl = HOST,
     siteName = 'Skin Moderne',
