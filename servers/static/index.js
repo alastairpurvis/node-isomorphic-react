@@ -35,6 +35,7 @@ import auth from './middleware/auth';
 import graphql from './middleware/graphql';
 import token from './middleware/token';
 import { CACHE_MAX_AGE } from './config';
+import cors from 'cors';
 
 const server = global.server = express();
 
@@ -53,7 +54,7 @@ server.use(bodyParser.json());
 server.use(bodyParser.text());
 server.use('/token', token);
 server.use('/auth', auth);
-server.use('/graphql', graphql);
+server.use('/graphql', cors(), graphql);
 server.use(useragent.express());
 server.get('*', render);
 server.use(errorHandler);

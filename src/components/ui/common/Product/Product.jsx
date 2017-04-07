@@ -126,7 +126,7 @@ class Product extends Component {
                     product,
                     variant_id: variantId
                 }))
-                .then(() => this.setState({ showProceedToCheckoutLink: true }));
+                .then(() => this.context.executeAction('navigate/to', { url: "/cart" }));
     };
 
     hasRecommendedProducts(product) {

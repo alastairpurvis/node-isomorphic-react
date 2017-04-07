@@ -4,10 +4,15 @@ $green-color: #008744;
 $light-green-color: #5cb85c;
 $blue-color: #3b589b;
 $sky-blue-color: #42A5F5;
+$fb-color: #3b589b;
+$fb-color-hover: lighten($fb-color,20%);
 
 $red-extra-light-color: #fdefee;
 $red-color: #d62d20;
 $yellow-color: #ffa700;
+
+$call-to-action-color: #eb6d54;
+$call-to-action-color-hover: lighten($call-to-action-color,20%);
 
 $cyan-dark-color: #00bcd4;
 $cyan-middle-color: #80deea;

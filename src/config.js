@@ -25,7 +25,7 @@
 import { canUseDOM } from './utils/env';
 
 export const
-    baseUrl = process.env.HOST || (canUseDOM && window.env && window.env.HOST) || 'http://localhost:4000',
+    baseUrl = process.env.HOST || (canUseDOM && window.env && window.env.HOST) || 'http://localhost:8080',
     siteName = 'Skin Moderne',
     facebook = {
         APP_ID: '<your_facebook_app_id>'

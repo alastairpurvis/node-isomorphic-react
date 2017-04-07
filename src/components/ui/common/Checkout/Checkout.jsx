@@ -144,7 +144,7 @@ class Checkout extends Component {
     renderHeader() {
         return (
             <header className={s.header}>
-                <Link
+                <Link 
                     name='SKIN MODERNE'
                     wrapperClassName={s.logo}
                     to={routes.HOME}
@@ -181,22 +181,8 @@ class Checkout extends Component {
                         flowDirection='bottom'
                         className={s.leftColumn}
                     >
-                        <Section>
-                            {isDesktop || isTablet
-                                ? <DesktopCartTable
-                                    cartLoaded={cartLoaded}
-                                    cartId={cartId}
-                                    products={products}
-                                />
-                                : <MobileCartTable
-                                    cartLoaded={cartLoaded}
-                                    cartId={cartId}
-                                    products={products}
-                                />}
-                        </Section>
                         <Section title='ADDRESS' hasSeparator>
                             <TabsPanel
-                                className={s.marginTop}
                                 activeTab={this.state.activeTab}
                                 onChange={this.handleActiveTabChange}
                             >

@@ -78,7 +78,7 @@ class CartPreview extends Component {
                 <Button
                     wide
                     className={s.checkoutButton}
-                    to={routes.CHECKOUT}
+                    to={routes.CART}
                 >
                     Checkout
                 </Button>

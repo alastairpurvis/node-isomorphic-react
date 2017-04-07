@@ -22,15 +22,48 @@
  * SOFTWARE.
  */
 
-const
-    servers = {
-        api: {
-            PORT: process.env.PORT || 4001
-        },
-        static: {
-            HOST: process.env.HOST || 'http://localhost',
-            PORT: process.env.PORT || 8080
-        }
+import React, { Component, PropTypes as pt } from 'react';
+import CartProducts from '../../common/CartProducts';
+import Button from '../../common/Button';
+import s from './CartMini.scss';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import watchStores from '../../../../utils/decorators/watchStores';
+import { routes } from '../../../../config';
+import { isEmpty } from 'lodash';
+
+@withStyles(s)
+@watchStores(
+    'cart'
+)
+class CartMini extends Component {
+    static contextTypes = {
+        getStore: pt.func.isRequired
     };
 
-export default servers;
+    getStoresState() {
+        const { products } = this.context.getStore('cart').getState();
+
+        return { products };
+    }
+
+    render() {
+        if (isEmpty(this.state.products)) {
+            return <div>The cart is empty.</div>;
+        }
+
+        return (
+            <div>
+                <CartProducts />
+                <Button
+                    wide
+                    className={s.checkoutButton}
+                    to={routes.CHECKOUT}
+                >
+                    Proceed to checkout
+                </Button>
+            </div>
+        );
+    }
+}
+
+export default CartMini;

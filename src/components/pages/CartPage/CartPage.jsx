@@ -42,7 +42,7 @@ class CartPage extends Component {
 
     render() {
         return (
-            <Container>
+            <Container contentArea>
                 <Title text={title} />
                 <Cart />
             </Container>

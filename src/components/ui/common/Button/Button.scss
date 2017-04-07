@@ -31,6 +31,11 @@
 .fat {
     padding: 15px 25px 34px 25px;
 }
+.cat {
+    padding: 12px 45px 32px 45px;
+    font-weight: 300;
+    font-size: 14px;
+}
 
 .black {
     background-color: $black-color;
@@ -47,6 +52,16 @@
 
     &:hover {
         background-color: $gray-light-color;
+    }
+}
+
+/* Call to action color */
+.cat {
+    background-color: $call-to-action-color;
+    color: $white-color;
+
+    &:hover {
+        background-color: $call-to-action-color-hover;
     }
 }
 

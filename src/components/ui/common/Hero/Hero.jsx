@@ -29,6 +29,7 @@ import s from './Hero.scss';
 import cx from 'classnames';
 import Button from '../Button';
 import Link from '../Link';
+import { COLOR_CAT} from '../../../../constants/colors';
 
 @withStyles(s)
 class Hero extends Component {
@@ -50,12 +51,6 @@ class Hero extends Component {
         onLoading: noop
     };
 
-    componentDidMount() {
-        this.img.complete
-            ? this.props.onLoad()
-            : this.props.onLoading();
-    }
-
     render() {
         const { src, className, onLoad, onClick, button, header, subheader } = this.props;
         const backgroundStyle = {
@@ -72,7 +67,7 @@ class Hero extends Component {
                     <h4 className={cx(s.subheader)}>{subheader}
                     </h4>
                     <Link to='/products/all-products'>
-                      <Button fat>{button}</Button>
+                      <Button cat color={COLOR_CAT}>{button}</Button>
                     </Link>
                   </div>
             </div>

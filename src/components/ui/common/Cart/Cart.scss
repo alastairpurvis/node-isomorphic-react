@@ -1,3 +1,75 @@
+@import '../../../styles/common.scss';
+@import '../../../styles/extends/flex.scss';
+
+.root {}
+
+.leftColumn {
+    flex: 1 1 100%;
+}
+
+.rightColumn {
+    @media #{$media-desktop} {
+        flex: 1 0 300px;
+    }
+
+    @media #{$media-desktop-large} {
+        flex: 1 0 350px;
+    }
+}
+
+.cartRow {
+    display: flex;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.headerRow {
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.orderForm{
+    @extend .flex-column;
+}
+
+.productColumn {
+    @extend .flex-row;
+    justify-content: start;
+    flex: 4 0 0;
+}
+
+.quantityColumn {
+    @extend .flex-row;
+    justify-content: center;
+    font-weight: bolder;
+    flex: 2 0 0;
+}
+
+.priceColumn {
+    @extend .flex-row;
+    justify-content: center;
+    font-size: 14px;
+    flex: 2 0 0;
+}
+
+.removeColumn {
+    flex: 1 0 0;
+    position: relative;
+}
+
+.removeIcon {
+    cursor: pointer;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+}
+
+.quantityColumn {
+    font-weight: bolder;
+    flex: 2 0 0;
+}
+
 .checkoutButton {
     margin-top: 20px;
 }

@@ -29,9 +29,12 @@ import Hero from '../../ui/common/Hero';
 import Row from '../../ui/common/Row';
 import Column from '../../ui/common/Column';
 import Link from '../../ui/common/Link';
+import s from './HomePage.scss';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
 
 const title = 'Home';
 
+@withStyles(s)
 class HomePage extends Component {
     static pageName = 'home';
 
@@ -52,19 +55,34 @@ class HomePage extends Component {
                 </Row>
                 <Row>
                     <Column>
+                    <figure className={s.honey}>
                         <Link to='/products/all-products'>
                             <Image src='/images/tile1.jpg' />
+                            <figcaption>
+							<h2>Face <span>Care</span> <i>Products</i></h2>
+						    </figcaption>
                         </Link>
+                    </figure>
                     </Column>
                     <Column>
+                    <figure className={s.honey}>
                         <Link to='/products/all-products'>
                             <Image src='/images/tile2.jpg' />
+                            <figcaption>
+							<h2>Body <span>Care</span> <i>Products</i></h2>
+						    </figcaption>
                         </Link>
+                    </figure>
                     </Column>
                     <Column>
+                    <figure className={s.honey}>
                         <Link to='/products/all-products'>
                             <Image src='/images/tile3.jpg' />
+                            <figcaption>
+							<h2>Anti <span>Aging</span> <i>Products</i></h2>
+						    </figcaption>
                         </Link>
+                    </figure>
                     </Column>
                 </Row>
             </div>

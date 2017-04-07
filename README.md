@@ -6,7 +6,7 @@ License MIT
 
 * Mac OS X, Windows, or Linux
 * Node.js v6.9.1 or newer
-* npm v3.10 or newer
+* Yarn package
 
 ## File structure
 
@@ -46,19 +46,23 @@ Clone the project into your working directory:
     git clone *github url*
 
 
-Edit /servers/api/config.js: paste you clientId and clientSecret in the clientId and clientSecret fields
+Edit /servers/api/config.js: paste your clientId and clientSecret in the clientId and clientSecret fields
 
 Install external dependencies:
 
-    npm i
+    yarn install
     
 Run API server (runs on port 4001, is available on http://localhost:4001/api):
 
-    npm run api
+    yarn run api
     
-Run static server(builds project and runs static server):
+Run static dev server (builds project and runs static server):
 
-    npm start
+    yarn dev
+
+Run production server (run yarn run build -- --release to build first):
+
+    yarn start
 
 Available addresses:
 
@@ -69,7 +73,7 @@ Available addresses:
 
 ## Development tools
 
-    npm start (/tools/start.js)
+    yarn dev (/tools/start.js)
 
 * Cleans up the output /build directory (clean.js)
 * Copies static files to the output folder (copy.js)
@@ -77,7 +81,7 @@ Available addresses:
 * Launches Node.js server from the compiled output folder (runServer.js)
 * Launches Browsersync, HMR, and React Transform
 
-    npm run build (/tools/build.js)
+    yarn run build (/tools/build.js)
 
 * Cleans up the output /build folder (clean.js)
 * Copies static files to the output folder (copy.js)
@@ -89,11 +93,11 @@ Flags:
 
 For example:
 
-    npm run build -- --release --verbose   # Build the app in production mode
+    yarn run build -- --release --verbose   # Build the app in production mode
 
 or
 
-    npm start -- --release                 # Launch dev server in production mode
+    yarn dev -- --release                 # Launch dev server in production mode
 
 ## Editing config
 
@@ -103,9 +107,4 @@ To enable these features, you need to perform some actions on the service websit
 To enable login via Facebook, you'll need to:
 * Create your Facebook Application (https://developers.facebook.com/docs/apps/register)
 * Edit /servers/api/config.js auth.facebook property, edit /src/config.js facebook.APP_ID property
-
-To enable AWS email notifications, you'll need to:
-* Create AWS account (https://aws.amazon.com/)
-* Enable AWS Simple Email Service
-* Edit /servers/api/config.js aws property
 

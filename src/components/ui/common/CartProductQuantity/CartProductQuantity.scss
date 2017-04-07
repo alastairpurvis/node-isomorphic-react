@@ -15,12 +15,13 @@
     @extend .unselectable;
     display: inline;
     font-size: 9px;
-    padding: 2px 4px;
+    padding: 1px 6px;
     border-radius: 2px;
     color: $white-color;
     max-width: 200px;
     text-align: center;
     text-transform: uppercase;
+    display: none;
 }
 
 .inStock {

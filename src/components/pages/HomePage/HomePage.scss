@@ -1,0 +1,87 @@
+.honey {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	margin: 0;
+	background: #3085a3;
+	text-align: center;
+	cursor: pointer;
+	max-width: 100%;
+    height: auto;
+}
+
+.honey img {
+	opacity: 0.9;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+	position: relative;
+	display: block;
+	max-width: 100%;
+	opacity: 1;
+}
+
+.honey:hover img {
+	opacity: 0.4;
+}
+
+.honey figcaption {
+    position: absolute;
+	padding: 2em;
+	color: #fff;
+    width: 100%;
+	text-transform: uppercase;
+	font-size: 1.15em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.honey figcaption::before {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 10px;
+	background: #fff;
+	content: '';
+	-webkit-transform: translate3d(0,10px,0);
+	transform: translate3d(0,10px,0);
+}
+
+.honey h2 {
+	position: absolute;
+	bottom: 0;
+	opacity: 0;
+	left: 0;
+	padding: 4.5em 2.5em;
+	width: 100%;
+	text-align: left;
+	-webkit-transform: translate3d(0,-20px,0);
+	transform: translate3d(0,-20px,0);
+}
+
+.honey h2 span {
+    font-weight: 300 !important;
+}
+
+
+.honey h2 i {
+	font-style: normal;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+	transition: opacity 0.5s, transform 0.5s;
+	-webkit-transform: translate3d(0,-20px,0);
+	transform: translate3d(0,-20px,0);
+}
+
+.honey figcaption::before,
+.honey h2 {
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+
+.honey:hover figcaption::before,
+.honey:hover h2,
+.honey:hover h2 i {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}

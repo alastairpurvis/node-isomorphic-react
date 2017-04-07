@@ -26,7 +26,7 @@ import React, { Component, PropTypes as pt } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Button.scss';
 import cx from 'classnames';
-import { COLOR_BLACK, COLOR_WHITE, COLOR_BLUE } from '../../../../constants/colors';
+import { COLOR_BLACK, COLOR_WHITE, COLOR_BLUE, COLOR_CAT } from '../../../../constants/colors';
 
 @withStyles(s)
 class Button extends Component {
@@ -39,11 +39,13 @@ class Button extends Component {
         wide: pt.bool,
         to: pt.string,
         fat: pt.bool,
+        cat: pt.bool,
         frame: pt.bool,
         color: pt.oneOf([
             COLOR_WHITE,
             COLOR_BLACK,
-            COLOR_BLUE
+            COLOR_BLUE,
+            COLOR_CAT
         ]),
         icon: pt.element,
         disabled: pt.bool,
@@ -59,6 +61,7 @@ class Button extends Component {
         color: COLOR_BLUE,
         disabled: false,
         fat: false,
+        cat: false,
         isSubmit: false
     };
 
@@ -92,8 +95,10 @@ class Button extends Component {
                     [s.black]: this.props.color === COLOR_BLACK,
                     [s.white]: this.props.color === COLOR_WHITE,
                     [s.blue]: this.props.color === COLOR_BLUE,
+                    [s.cat]: this.props.color === COLOR_CAT,
                     [s.frame]: this.props.frame,
                     [s.fat]: this.props.fat,
+                    [s.cat]: this.props.cat,
                     [s.wide]: this.props.wide,
                     [s.disabled]: this.props.disabled
                 })}

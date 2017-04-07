@@ -6,13 +6,13 @@
     "npm": ">=3.3 <4"
   },
   "dependencies": {
-    "aws-sdk": "^2.6.9",
     "babel-polyfill": "6.6.1",
     "babel-runtime": "6.6.1",
     "bluebird": "3.3.3",
     "body-parser": "1.15.0",
     "classnames": "2.2.3",
     "cookie-parser": "1.4.1",
+    "cors": "^2.8.3",
     "dispatchr": "^1.0.0",
     "eventemitter3": "^1.2.0",
     "express": "4.13.4",
@@ -22,8 +22,8 @@
     "fbjs": "0.7.2",
     "flux": "^2.1.1",
     "front-matter": "2.0.6",
-    "graphiql": "^0.5.0",
-    "graphql": "^0.4.18",
+    "graphiql": "^0.9.3",
+    "graphql": "^0.9.2",
     "handlebars": "^4.0.5",
     "history": "2.0.0",
     "hoist-non-react-statics": "^1.2.0",
@@ -117,6 +117,7 @@
     "bundle": "babel-node tools/run bundle",
     "build": "babel-node tools/run build",
     "api": "babel-node servers/api/index.js",
-    "start": "babel-node tools/run start"
+    "dev": "babel-node tools/run start",
+    "start": "./node_modules/.bin/babel-node servers/api/index.js & node build/static-server.js"
   }
 }
