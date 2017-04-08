@@ -119,7 +119,7 @@
     "bundle": "babel-node tools/run bundle",
     "build": "./node_modules/.bin/babel-node tools/run build  -- --release",
     "api": "babel-node servers/api/index.js",
-    "dev": "babel-node tools/run start",
+    "devmode": "babel-node tools/run start",
     "start": "NODE_ENV=production node build/static-server.js"
   }
 }

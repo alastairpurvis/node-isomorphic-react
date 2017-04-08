@@ -54,13 +54,13 @@ Install external dependencies:
     
 Run static devevelopment server (builds project and runs static server locally):
 
-    yarn dev
+    yarn devmode
 
 Build project for final production:
 
     yarn run build
 
-Running production server:
+Running production server (e.g. Heroku):
 
     yarn start
 
