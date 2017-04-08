@@ -97,7 +97,7 @@ For example:
 
 or
 
-    yarn dev -- --release                 # Launch dev server in production mode
+    yarn devmode -- --release                 # Launch dev server in production mode
 
 ## Editing config
 
