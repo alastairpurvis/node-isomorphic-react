@@ -117,7 +117,7 @@
     "clean": "babel-node tools/run clean",
     "copy": "babel-node tools/run copy",
     "bundle": "babel-node tools/run bundle",
-    "build": "babel-node tools/run build  -- --release",
+    "build": "./node_modules/.bin/babel-node tools/run build  -- --release",
     "api": "babel-node servers/api/index.js",
     "dev": "babel-node tools/run start",
     "start": "node static-server.js"
