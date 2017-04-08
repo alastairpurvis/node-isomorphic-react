@@ -1,2 +1,6 @@
 env: flex
 runtime: nodejs
+
+handlers:
+- url: /.well-known
+  static_dir: .well-known

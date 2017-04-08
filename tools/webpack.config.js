@@ -26,6 +26,7 @@ import path from 'path';
 import webpack from 'webpack';
 import extend from 'extend';
 import AssetsPlugin from 'assets-webpack-plugin';
+import CompressionPlugin from 'compression-webpack-plugin';
 
 const
     DEBUG = !process.argv.includes('--release'),
@@ -158,7 +159,13 @@ const
                         warnings: VERBOSE
                     }
                 }),
-                new webpack.optimize.AggressiveMergingPlugin()
+                new webpack.optimize.AggressiveMergingPlugin(), new CompressionPlugin({
+                    asset: "[path].gz[query]",
+                    algorithm: "gzip",
+                    test: /\.js$|\.css$|\.html$/,
+                    threshold: 10240,
+                    minRatio: 0.8
+                    })
             ] : [])
         ]
     }),

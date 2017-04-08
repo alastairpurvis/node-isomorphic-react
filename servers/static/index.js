@@ -28,7 +28,6 @@ import path from 'path';
 import useragent from 'express-useragent';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
-import compression from 'compression';
 import serversConfig from '../config';
 import errorHandler from './middleware/errorHandler';
 import render from './middleware/render';
@@ -37,11 +36,7 @@ import graphql from './middleware/graphql';
 import token from './middleware/token';
 import { CACHE_MAX_AGE } from './config';
 import cors from 'cors';
-import allowCrossDomain from '../api/middleware/allowCrossDomain';
-import allowMethods from '../api/middleware/allowMethods';
-import email from '../api/middleware/email';
-import mountStoreApi from '../api/middleware/store';
-import invoice from '../api/middleware/invoice';
+
 
 const server = global.server = express();
 
@@ -51,27 +46,24 @@ global.navigator = global.navigator || {};
 global.navigator.userAgent = global.navigator.userAgent || 'all';
 
 // Register Node.js middleware
-server.use(compression());
+server.get('*.js', function (req, res, next) {
+  req.url = req.url + '.gz';
+  res.set('Content-Encoding', 'gzip');
+  next();
+});
 server.use(express.static(path.join(__dirname, 'public'), {
     maxAge: CACHE_MAX_AGE
 }));
-server.use(allowCrossDomain);
-server.use(allowMethods);
 server.use(cookieParser());
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
+server.use(bodyParser.text());
 server.use('/token', token);
 server.use('/auth', auth);
-mountStoreApi(server);
-server.use(bodyParser.text());
 server.use('/graphql', cors(), graphql);
 server.use(useragent.express());
 server.get('*', render);
 server.use(errorHandler);
-
-server.use('../api/email', email);
-server.use('../api/invoice', invoice);
-
 
 // Launch the server
 server.listen(serversConfig.static.PORT, () => {

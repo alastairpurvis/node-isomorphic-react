@@ -33,7 +33,7 @@ export const
         APP_ID: '<your_facebook_app_id>'
     },
     api = {
-        URL: baseUrl,
+        URL: 'https://skinmoderne-api.appspot.com',
         VERSION: '/api'
     },
     pagination = {
