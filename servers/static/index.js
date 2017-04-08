@@ -52,18 +52,18 @@ global.navigator.userAgent = global.navigator.userAgent || 'all';
 
 // Register Node.js middleware
 server.use(compression());
+server.use(express.static(path.join(__dirname, 'public'), {
+    maxAge: CACHE_MAX_AGE
+}));
 server.use(allowCrossDomain);
 server.use(allowMethods);
 server.use(cookieParser());
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
-server.use(bodyParser.text());
 server.use('/token', token);
 server.use('/auth', auth);
 mountStoreApi(server);
-server.use(express.static(path.join(__dirname, 'public'), {
-    maxAge: CACHE_MAX_AGE
-}));
+server.use(bodyParser.text());
 server.use('/graphql', cors(), graphql);
 server.use(useragent.express());
 server.get('*', render);
