@@ -166,11 +166,11 @@ module.exports =
   server.use(_allowMethods2.default);
   server.use((0, _cookieParser2.default)());
   server.use(_bodyParser2.default.urlencoded({ extended: true }));
+  server.use(_bodyParser2.default.text());
   server.use(_bodyParser2.default.json());
   server.use('/token', _token2.default);
   server.use('/auth', _auth2.default);
   (0, _store2.default)(server);
-  server.use(_bodyParser2.default.text());
   server.use('/graphql', (0, _cors2.default)(), _graphql2.default);
   server.use(_expressUseragent2.default.express());
   server.get('*', _render2.default);

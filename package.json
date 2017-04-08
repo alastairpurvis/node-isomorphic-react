@@ -120,6 +120,6 @@
     "build": "babel-node tools/run build  -- --release",
     "api": "babel-node servers/api/index.js",
     "dev": "babel-node tools/run start",
-    "start": "node build/static-server.js"
+    "start": "NODE_ENV=production node build/static-server.js"
   }
 }
