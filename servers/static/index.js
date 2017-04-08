@@ -24,6 +24,7 @@
 
 import 'babel-polyfill';
 import express from 'express';
+import apicache from 'apicache';
 import path from 'path';
 import useragent from 'express-useragent';
 import cookieParser from 'cookie-parser';
@@ -39,6 +40,8 @@ import cors from 'cors';
 
 
 const server = global.server = express();
+apicache.options({ debug: true })
+let cache = apicache.middleware;
 
 // Tell any CSS tooling (such as Material UI) to use all vendor prefixes if the
 // user agent is not known.
@@ -46,6 +49,7 @@ global.navigator = global.navigator || {};
 global.navigator.userAgent = global.navigator.userAgent || 'all';
 
 // Register Node.js middleware
+server.use(cache('2 weeks'));
 server.get('*.js', function (req, res, next) {
   req.url = req.url + '.gz';
   res.set('Content-Encoding', 'gzip');

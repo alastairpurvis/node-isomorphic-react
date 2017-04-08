@@ -26,7 +26,7 @@ import { canUseDOM } from './utils/env';
 
 export const
     HOST = process.env.HOST || process.env.BASE_URI || (canUseDOM && window.env && window.env.HOST) || 'https://peaceful-atoll-38091.herokuapp.com',
-    PORT = process.env.PORT || 5000,
+    PORT = process.env.PORT || 8080,
     baseUrl = HOST,
     siteName = 'Skin Moderne',
     facebook = {
