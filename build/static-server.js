@@ -502,7 +502,7 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
-  var HOST = exports.HOST = process.env.HOST || process.env.BASE_URI || _env.canUseDOM && window.env && window.env.HOST || 'https://skinmoderne.herokuapp.com',
+  var HOST = exports.HOST = process.env.HOST || process.env.BASE_URI || _env.canUseDOM && window.env && window.env.HOST || 'https://peaceful-atoll-38091.herokuapp.com',
       PORT = exports.PORT = process.env.PORT || 5000,
       baseUrl = exports.baseUrl = HOST,
       siteName = exports.siteName = 'Skin Moderne',
