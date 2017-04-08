@@ -159,18 +159,18 @@ module.exports =
   
   // Register Node.js middleware
   server.use((0, _compression2.default)());
-  server.use(_express2.default.static(_path2.default.join(__dirname, 'public'), {
-      maxAge: _config3.CACHE_MAX_AGE
-  }));
   server.use(_allowCrossDomain2.default);
   server.use(_allowMethods2.default);
   server.use((0, _cookieParser2.default)());
   server.use(_bodyParser2.default.urlencoded({ extended: true }));
   server.use(_bodyParser2.default.json());
+  server.use(_bodyParser2.default.text());
   server.use('/token', _token2.default);
   server.use('/auth', _auth2.default);
   (0, _store2.default)(server);
-  server.use(_bodyParser2.default.text());
+  server.use(_express2.default.static(_path2.default.join(__dirname, 'public'), {
+      maxAge: _config3.CACHE_MAX_AGE
+  }));
   server.use('/graphql', (0, _cors2.default)(), _graphql2.default);
   server.use(_expressUseragent2.default.express());
   server.get('*', _render2.default);
@@ -503,7 +503,7 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
-  var HOST = exports.HOST = process.env.HOST || process.env.BASE_URI || _env.canUseDOM && window.env && window.env.HOST || 'http://www.skinmoderne.com',
+  var HOST = exports.HOST = process.env.HOST || process.env.BASE_URI || _env.canUseDOM && window.env && window.env.HOST || 'https://skinmoderne.herokuapp.com',
       PORT = exports.PORT = process.env.PORT || 5000,
       baseUrl = exports.baseUrl = HOST,
       siteName = exports.siteName = 'Skin Moderne',
