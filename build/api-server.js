@@ -90,32 +90,8 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
-  /**
-   * MIT License
-   *
-   * Copyright (c) 2017 Skin Moderne Inc.
-   *
-   * Permission is hereby granted, free of charge, to any person obtaining a copy
-   * of this software and associated documentation files (the "Software"), to deal
-   * in the Software without restriction, including without limitation the rights
-   * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-   * copies of the Software, and to permit persons to whom the Software is
-   * furnished to do so, subject to the following conditions:
-   *
-   * The above copyright notice and this permission notice shall be included in all
-   * copies or substantial portions of the Software.
-   *
-   * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-   * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-   * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-   * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-   * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-   * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-   * SOFTWARE.
-   */
-  
   var server = global.server = (0, _express2.default)();
-  _apicache2.default.options({ debug: true });
+  //apicache.options({ debug: true })
   var cache = _apicache2.default.middleware;
   
   // Register Node.js middleware
@@ -136,7 +112,7 @@ module.exports =
   
   // Launch the server
   server.listen(_config2.default.api.PORT, function () {
-    console.log('The API server is running at port ' + _config2.default.api.PORT);
+      console.log('The API server is running at port ' + _config2.default.api.PORT);
   });
 
 /***/ },
@@ -148,30 +124,6 @@ module.exports =
   Object.defineProperty(exports, "__esModule", {
       value: true
   });
-  /**
-   * MIT License
-   *
-   * Copyright (c) 2017 Skin Moderne Inc.
-   *
-   * Permission is hereby granted, free of charge, to any person obtaining a copy
-   * of this software and associated documentation files (the "Software"), to deal
-   * in the Software without restriction, including without limitation the rights
-   * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-   * copies of the Software, and to permit persons to whom the Software is
-   * furnished to do so, subject to the following conditions:
-   *
-   * The above copyright notice and this permission notice shall be included in all
-   * copies or substantial portions of the Software.
-   *
-   * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-   * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-   * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-   * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-   * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-   * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-   * SOFTWARE.
-   */
-  
   var headers = exports.headers = {
       accessControl: {
           ALLOW_ORIGIN: '*',
@@ -218,37 +170,13 @@ module.exports =
   "use strict";
   
   Object.defineProperty(exports, "__esModule", {
-    value: true
+      value: true
   });
-  /**
-   * MIT License
-   *
-   * Copyright (c) 2017 Skin Moderne Inc.
-   *
-   * Permission is hereby granted, free of charge, to any person obtaining a copy
-   * of this software and associated documentation files (the "Software"), to deal
-   * in the Software without restriction, including without limitation the rights
-   * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-   * copies of the Software, and to permit persons to whom the Software is
-   * furnished to do so, subject to the following conditions:
-   *
-   * The above copyright notice and this permission notice shall be included in all
-   * copies or substantial portions of the Software.
-   *
-   * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-   * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-   * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-   * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-   * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-   * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-   * SOFTWARE.
-   */
-  
   var statusCodes = exports.statusCodes = {
-    OK: 200,
-    BAD_REQUEST: 400,
-    PAGE_NOT_FOUND: 404,
-    INTERNAL_ERROR: 500
+      OK: 200,
+      BAD_REQUEST: 400,
+      PAGE_NOT_FOUND: 404,
+      INTERNAL_ERROR: 500
   };
 
 /***/ },
@@ -285,29 +213,7 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
-  var SEC_DELIMITER = 1000; /**
-                             * MIT License
-                             *
-                             * Copyright (c) 2017 Skin Moderne Inc.
-                             *
-                             * Permission is hereby granted, free of charge, to any person obtaining a copy
-                             * of this software and associated documentation files (the "Software"), to deal
-                             * in the Software without restriction, including without limitation the rights
-                             * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-                             * copies of the Software, and to permit persons to whom the Software is
-                             * furnished to do so, subject to the following conditions:
-                             *
-                             * The above copyright notice and this permission notice shall be included in all
-                             * copies or substantial portions of the Software.
-                             *
-                             * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-                             * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-                             * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-                             * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-                             * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-                             * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-                             * SOFTWARE.
-                             */
+  var SEC_DELIMITER = 1000;
   
   var Logger = function () {
       function Logger() {
@@ -355,30 +261,6 @@ module.exports =
   var _lodash = __webpack_require__(2);
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-  
-  /**
-   * MIT License
-   *
-   * Copyright (c) 2017 Skin Moderne Inc.
-   *
-   * Permission is hereby granted, free of charge, to any person obtaining a copy
-   * of this software and associated documentation files (the "Software"), to deal
-   * in the Software without restriction, including without limitation the rights
-   * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-   * copies of the Software, and to permit persons to whom the Software is
-   * furnished to do so, subject to the following conditions:
-   *
-   * The above copyright notice and this permission notice shall be included in all
-   * copies or substantial portions of the Software.
-   *
-   * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-   * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-   * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-   * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-   * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-   * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-   * SOFTWARE.
-   */
   
   var data = {
       resetPassword: {
@@ -437,30 +319,6 @@ module.exports =
   var _lodash = __webpack_require__(2);
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-  
-  /**
-   * MIT License
-   *
-   * Copyright (c) 2017 Skin Moderne Inc.
-   *
-   * Permission is hereby granted, free of charge, to any person obtaining a copy
-   * of this software and associated documentation files (the "Software"), to deal
-   * in the Software without restriction, including without limitation the rights
-   * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-   * copies of the Software, and to permit persons to whom the Software is
-   * furnished to do so, subject to the following conditions:
-   *
-   * The above copyright notice and this permission notice shall be included in all
-   * copies or substantial portions of the Software.
-   *
-   * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-   * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-   * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-   * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-   * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-   * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-   * SOFTWARE.
-   */
   
   function email(req, res) {
       var _req$body = req.body,
@@ -538,29 +396,7 @@ module.exports =
   
   var ses = new _awsSdk2.default.SES((0, _extends3.default)({}, _config.auth.aws, {
       region: _config.aws.REGION
-  })); /**
-        * MIT License
-        *
-        * Copyright (c) 2017 Skin Moderne Inc.
-        *
-        * Permission is hereby granted, free of charge, to any person obtaining a copy
-        * of this software and associated documentation files (the "Software"), to deal
-        * in the Software without restriction, including without limitation the rights
-        * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-        * copies of the Software, and to permit persons to whom the Software is
-        * furnished to do so, subject to the following conditions:
-        *
-        * The above copyright notice and this permission notice shall be included in all
-        * copies or substantial portions of the Software.
-        *
-        * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-        * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-        * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-        * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-        * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-        * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-        * SOFTWARE.
-        */
+  }));
   
   function sendEmail(_ref) {
       var _ref$destinations = _ref.destinations,
@@ -597,38 +433,16 @@ module.exports =
   'use strict';
   
   Object.defineProperty(exports, "__esModule", {
-    value: true
+      value: true
   });
   
   var _config = __webpack_require__(1);
   
   function allowCrossDomain(req, res, next) {
-    res.set('Access-Control-Allow-Origin', _config.headers.accessControl.ALLOW_ORIGIN);
-    res.set('Access-Control-Allow-Headers', _config.headers.accessControl.ALLOW_HEADERS);
-    next();
-  } /**
-     * MIT License
-     *
-     * Copyright (c) 2017 Skin Moderne Inc.
-     *
-     * Permission is hereby granted, free of charge, to any person obtaining a copy
-     * of this software and associated documentation files (the "Software"), to deal
-     * in the Software without restriction, including without limitation the rights
-     * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-     * copies of the Software, and to permit persons to whom the Software is
-     * furnished to do so, subject to the following conditions:
-     *
-     * The above copyright notice and this permission notice shall be included in all
-     * copies or substantial portions of the Software.
-     *
-     * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-     * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-     * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-     * SOFTWARE.
-     */
+      res.set('Access-Control-Allow-Origin', _config.headers.accessControl.ALLOW_ORIGIN);
+      res.set('Access-Control-Allow-Headers', _config.headers.accessControl.ALLOW_HEADERS);
+      next();
+  }
   
   exports.default = allowCrossDomain;
 
@@ -645,30 +459,6 @@ module.exports =
   var _constants = __webpack_require__(3);
   
   var _config = __webpack_require__(1);
-  
-  /**
-   * MIT License
-   *
-   * Copyright (c) 2017 Skin Moderne Inc.
-   *
-   * Permission is hereby granted, free of charge, to any person obtaining a copy
-   * of this software and associated documentation files (the "Software"), to deal
-   * in the Software without restriction, including without limitation the rights
-   * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-   * copies of the Software, and to permit persons to whom the Software is
-   * furnished to do so, subject to the following conditions:
-   *
-   * The above copyright notice and this permission notice shall be included in all
-   * copies or substantial portions of the Software.
-   *
-   * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-   * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-   * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-   * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-   * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-   * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-   * SOFTWARE.
-   */
   
   function allowMethods(req, res, next) {
       if (req.method === 'OPTIONS') {
@@ -725,29 +515,7 @@ module.exports =
   var options = {
       format: 'Letter'
   },
-      logger = new _Logger2.default(); /**
-                                        * MIT License
-                                        *
-                                        * Copyright (c) 2017 Skin Moderne Inc.
-                                        *
-                                        * Permission is hereby granted, free of charge, to any person obtaining a copy
-                                        * of this software and associated documentation files (the "Software"), to deal
-                                        * in the Software without restriction, including without limitation the rights
-                                        * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-                                        * copies of the Software, and to permit persons to whom the Software is
-                                        * furnished to do so, subject to the following conditions:
-                                        *
-                                        * The above copyright notice and this permission notice shall be included in all
-                                        * copies or substantial portions of the Software.
-                                        *
-                                        * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-                                        * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-                                        * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-                                        * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-                                        * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-                                        * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-                                        * SOFTWARE.
-                                        */
+      logger = new _Logger2.default();
   
   function invoice(req, res) {
       var data = req.body.data,
@@ -830,29 +598,7 @@ module.exports =
   
   var schemaClient = new _schemaClient2.default.Client(_config.auth.schemaIO.clientId, _config.auth.schemaIO.clientSecret),
       logger = new _Logger2.default(),
-      API_PATH = '/api'; /**
-                          * MIT License
-                          *
-                          * Copyright (c) 2017 Skin Moderne Inc.
-                          *
-                          * Permission is hereby granted, free of charge, to any person obtaining a copy
-                          * of this software and associated documentation files (the "Software"), to deal
-                          * in the Software without restriction, including without limitation the rights
-                          * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-                          * copies of the Software, and to permit persons to whom the Software is
-                          * furnished to do so, subject to the following conditions:
-                          *
-                          * The above copyright notice and this permission notice shall be included in all
-                          * copies or substantial portions of the Software.
-                          *
-                          * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-                          * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-                          * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-                          * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-                          * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-                          * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-                          * SOFTWARE.
-                          */
+      API_PATH = '/api';
   
   function isGetMethod(_ref) {
       var method = _ref.method;
@@ -1056,30 +802,6 @@ module.exports =
   Object.defineProperty(exports, "__esModule", {
       value: true
   });
-  /**
-   * MIT License
-   *
-   * Copyright (c) 2017 Skin Moderne Inc.
-   *
-   * Permission is hereby granted, free of charge, to any person obtaining a copy
-   * of this software and associated documentation files (the "Software"), to deal
-   * in the Software without restriction, including without limitation the rights
-   * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-   * copies of the Software, and to permit persons to whom the Software is
-   * furnished to do so, subject to the following conditions:
-   *
-   * The above copyright notice and this permission notice shall be included in all
-   * copies or substantial portions of the Software.
-   *
-   * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-   * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-   * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-   * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-   * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-   * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-   * SOFTWARE.
-   */
-  
   var servers = {
       api: {
           PORT: process.env.PORT || 4001
@@ -1099,37 +821,13 @@ module.exports =
   "use strict";
   
   Object.defineProperty(exports, "__esModule", {
-    value: true
+      value: true
   });
-  /**
-   * MIT License
-   *
-   * Copyright (c) 2017 Skin Moderne Inc.
-   *
-   * Permission is hereby granted, free of charge, to any person obtaining a copy
-   * of this software and associated documentation files (the "Software"), to deal
-   * in the Software without restriction, including without limitation the rights
-   * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-   * copies of the Software, and to permit persons to whom the Software is
-   * furnished to do so, subject to the following conditions:
-   *
-   * The above copyright notice and this permission notice shall be included in all
-   * copies or substantial portions of the Software.
-   *
-   * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-   * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-   * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-   * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-   * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-   * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-   * SOFTWARE.
-   */
-  
   var statusCodes = {
-    OK: 200,
-    BAD_REQUEST: 400,
-    PAGE_NOT_FOUND: 404,
-    INTERNAL_ERROR: 500
+      OK: 200,
+      BAD_REQUEST: 400,
+      PAGE_NOT_FOUND: 404,
+      INTERNAL_ERROR: 500
   };
   
   exports.default = statusCodes;
@@ -1145,30 +843,6 @@ module.exports =
   });
   exports.buildEmailBodyMarkup = buildEmailBodyMarkup;
   exports.buildEmailAttachmentMarkup = buildEmailAttachmentMarkup;
-  /**
-   * MIT License
-   *
-   * Copyright (c) 2017 Skin Moderne Inc.
-   *
-   * Permission is hereby granted, free of charge, to any person obtaining a copy
-   * of this software and associated documentation files (the "Software"), to deal
-   * in the Software without restriction, including without limitation the rights
-   * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-   * copies of the Software, and to permit persons to whom the Software is
-   * furnished to do so, subject to the following conditions:
-   *
-   * The above copyright notice and this permission notice shall be included in all
-   * copies or substantial portions of the Software.
-   *
-   * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-   * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-   * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-   * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-   * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-   * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-   * SOFTWARE.
-   */
-  
   function buildEmailBodyMarkup(_ref) {
       var subject = _ref.subject,
           html = _ref.html;
