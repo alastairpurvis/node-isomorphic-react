@@ -71,6 +71,7 @@ class Button extends Component {
                     [s.black]: this.props.color === COLOR_BLACK,
                     [s.white]: this.props.color === COLOR_WHITE,
                     [s.blue]: this.props.color === COLOR_BLUE,
+                    [s.fb]: this.props.color === 'fb',
                     [s.cat]: this.props.color === COLOR_CAT,
                     [s.frame]: this.props.frame,
                     [s.fat]: this.props.fat,

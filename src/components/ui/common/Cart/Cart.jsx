@@ -11,11 +11,14 @@ import Separator from '../../common/Separator';
 import CartProduct from '../../common/CartProduct';
 import Price from '../../common/Price';
 import Trashcan from '../../common/Icon/Icons/Trashcan.jsx';
-import { SIZE_SMALL } from '../../../../constants/icon';
+import { SIZE_EXTRA_SMALL } from '../../../../constants/icon';
 import { isEmpty } from 'lodash';
 import OrderSummary from '../OrderSummary';
 import CartProductQuantity from '../../common/CartProductQuantity';
-
+import { COLOR_GRAY } from '../../../../constants/colors';
+import IconCartShopping from '../../common/Icon/Icons/CartShopping';
+import { SIZE_MASSIVE } from '../../../../constants/icon';
+import Container from '../Container';
 
 @withStyles(s)
 @watchStores(
@@ -60,11 +63,22 @@ class Cart extends Component {
             { isLogged, products, cartLoaded, cartId } = this.state;
 
         if (isEmpty(products)) {
-            if (cartLoaded) {
-                return <div>The cart is empty.</div>;
-            } else {
-                return null;
-            }
+                return (
+                <Container contentArea>
+                    <Column 
+                        alignItems='center'
+                        flowDirection='bottom'>
+                        <IconCartShopping
+                            className={s.cartIcon} 
+                            color={s.cartIconColor}
+                            size={SIZE_MASSIVE}
+                        />
+                        <div className={s.empty}>
+                            Your cart is currently empty.
+                        </div>
+                    </Column>
+                </Container>
+                        );
         }
 
         return (
@@ -104,13 +118,14 @@ class Cart extends Component {
                             />
                             <div className={s.removeColumn}>
                                 <Trashcan
-                                    size={SIZE_SMALL}
-                                    className={s.removeIcon}
+                                    size={SIZE_EXTRA_SMALL}
+                                    className={s.removeIcon} 
+                                    color={s.cartIconColor}
                                     onClick={this.handleRemoveFromCart.bind(this, cartItem)}
                                 />
                             </div>
                         </div>,
-                        <Separator />
+                        <Separator className={s.itemSeparator}/>
                     ]
                 )}
             </Column>
@@ -121,11 +136,12 @@ class Cart extends Component {
                 <div className={s.orderForm}>
                     <OrderSummary />
                     <Button
-                        wide
+                        wide 
+                        fat
                         className={s.checkoutButton}
                         to={routes.CHECKOUT}
                     >
-                        Proceed to checkout
+                        Checkout
                     </Button>
                 </div>
             </Column>

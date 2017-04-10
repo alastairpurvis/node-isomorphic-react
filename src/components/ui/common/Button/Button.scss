@@ -74,6 +74,15 @@
     }
 }
 
+.fb {
+    background-color: $fb-color;
+    color: $white-color;
+
+    &:hover {
+        background-color: $fb-color-hover;
+    }
+}
+
 .wide {
     @extend .flex-wide-element;
     width: 100%;

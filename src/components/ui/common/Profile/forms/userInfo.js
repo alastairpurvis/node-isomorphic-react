@@ -19,7 +19,7 @@ export default (component, s) => {
         value: user['first_name']
     }, {
         name: 'phone',
-        title: 'Phone №',
+        title: 'Phone',
         onClick: component.handleInputClick,
         value: user['phone']
     }, {
@@ -36,9 +36,9 @@ export default (component, s) => {
     }, {
         name: 'shipping.state',
         type: 'select',
-        title: 'Region',
+        title: 'Country',
         options: regions,
-        defaultValue: 'region1',
+        defaultValue: 'United States',
         onClick: component.handleInputClick,
         value: user['shipping']['state']
     }, {

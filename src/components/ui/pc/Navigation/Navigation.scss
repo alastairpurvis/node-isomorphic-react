@@ -4,16 +4,10 @@
 
 .link {
     @extend .unselectable;
-    line-height: 24px;
-    letter-spacing: 1px;
-    font-weight: 300;
-    font-size: 14px;
-    display: inline-block;
-    text-transform: uppercase;
-    transition: all 0.2s;
-
+    @extend .nav-link;
+    @extend .default-link;
     &:hover {
-       opacity: 0.5;
+       @extend .default-link-hover;
     }
 }
 

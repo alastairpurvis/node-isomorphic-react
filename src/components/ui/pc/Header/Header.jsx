@@ -23,7 +23,7 @@ class Header extends Component {
                     <div className={cx(s.row, s.spaceBetween, s.center, s.high)}>
                     <div className={cx(s.one, s.contentLeft)}>
                         <Link className={s.logo} to='/'>
-                            <Image src='/images/logo-white.jpg' />
+                            <Image src='/images/logo-white.svg' />
                         </Link>
                     </div>
                         <div className={cx(s.row, s.equal, s.contentLeft)}>

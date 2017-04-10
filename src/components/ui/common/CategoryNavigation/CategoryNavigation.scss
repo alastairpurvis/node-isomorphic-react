@@ -11,12 +11,11 @@
     height: 70px;
     margin: 0 10% 0 10%;
     @media #{$media-mobile} {
-        flex-flow: row wrap;
-         align-content: space-between;
-         justify-content: space-between;
-         height: 100%;
-         padding: 6px 0 18px;
-         margin: 0;
+            height: 100%;
+            padding: 6px 5px 18px 5px;
+            margin: 0;
+            overflow-x: scroll;
+            flex-shrink: 0;
     }
 }
 
@@ -28,6 +27,9 @@
 .contentCenter {
     align-items: center;
     justify-content: space-between;
+    @media #{$media-mobile} {
+            flex-shrink: 0;
+    }
 }
 
 .contentRight {
@@ -38,8 +40,6 @@
 .equal {
     display: flex;
     flex: 1 0 100px;
-    @media #{$media-mobile} {
-    }
 }
 
 .link {
@@ -48,10 +48,9 @@
     letter-spacing: 1px;
     font-weight: 300;
     font-size: 14px;
-    transition: all .2s;
-
+    @extend .default-link;
     &:hover {
-       opacity: 0.5;
+       @extend .default-link-hover;
     }
 }
 
@@ -68,6 +67,9 @@
     }
 
     @media #{$media-mobile} {
-        padding: 12px 8px 0px 8px;
+        padding: 12px 15px 0px 15px;
+    }
+    @media #{$media-mobile} {
+            flex-shrink: 0;
     }
 }

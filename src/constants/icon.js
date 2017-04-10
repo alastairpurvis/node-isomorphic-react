@@ -8,6 +8,10 @@ export const
         width: 12,
         height: 12
     },
+    SIZE_NAV = {
+        width: 17,
+        height: 17
+    },
     SIZE_SMALL = {
         width: 18,
         height: 18
@@ -23,6 +27,10 @@ export const
     SIZE_EXTRA_LARGE = {
         width: 48,
         height: 48
+    },
+    SIZE_MASSIVE = {
+        width: 128,
+        height: 128
     },
 
     // Thickness

@@ -1,1 +1,9 @@
+@import '../../../styles/extends/typography.scss';
 
+.accountLink {
+    @extend .nav-link;
+    @extend .default-link;
+    &:hover {
+       @extend .default-link-hover;
+    }
+}

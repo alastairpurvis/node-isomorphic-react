@@ -21,7 +21,7 @@ class SubFooter extends Component {
                 <Container>
                     <div className={s.unit}>
                         <Container>
-                            <Row spaceBetween>
+                            <Row weak spaceBetween>
                                 <div className={cx(s.row, s.equal, s.contentLeft)}>
                                     <div className={cx(s.row, s.equal, s.contentLeft)}>
                                         <h3>

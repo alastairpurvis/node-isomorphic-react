@@ -12,6 +12,12 @@
     }
 }
 
+.mobile {
+    @media #{$media-desktop} {
+        display: none;
+    }
+}
+
 .mask {
     z-index: 9;
 }

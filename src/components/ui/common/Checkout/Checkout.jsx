@@ -24,7 +24,7 @@ import getLoginItems from './forms/login';
 import Image from '../Image';
 
 const
-    ORDER_FORM_OFFSET_TOP = 30,
+    ORDER_FORM_OFFSET_TOP = 60,
     DELIVERY_TAB_INDEX = 0;
 
 @withStyles(s)
@@ -125,17 +125,17 @@ class Checkout extends Component {
                     wrapperClassName={s.logo}
                     to={routes.HOME}
                 >
-                    <Image src='/images/logo-white.jpg' />
+                    <Image src='/images/logo-white.svg' />
                 </Link>
                 <nav className={s.nav}>
                     <Link
                         custom
                         className={s.backLink}
-                        to={this.state.backPath}
+                        to='/cart'
                     >
                         <IconArrowLeft size={SIZE_SMALL} />
                         &nbsp;
-                        Back to shopping
+                        Back to cart
                     </Link>
                 </nav>
             </header>
@@ -150,14 +150,14 @@ class Checkout extends Component {
         return (
             <div className={s.root}>
                 {isDesktop && this.renderHeader()}
-                <Row>
+                <Row className={s.container}>
                     <Column
                         hasRightMargin
                         alignItems='stretch'
                         flowDirection='bottom'
                         className={s.leftColumn}
                     >
-                        <Section title='ADDRESS' hasSeparator>
+                        <Section title='Shipping Address' hasSeparator>
                             <TabsPanel
                                 activeTab={this.state.activeTab}
                                 onChange={this.handleActiveTabChange}
@@ -187,15 +187,6 @@ class Checkout extends Component {
                                 items={getPaymentMethodItems(this)}
                             />
                         </Section>
-                        <Section centered className={s.controls}>
-                            <Button
-                                form='deliveryAddress'
-                                color={COLOR_WHITE}
-                                isSubmit
-                            >
-                                Order
-                            </Button>
-                        </Section>
                     </Column>
                     <Column
                         alignItems='stretch'
@@ -208,9 +199,10 @@ class Checkout extends Component {
                                 <OrderSummary />
                                 <Button
                                     form='deliveryAddress'
+                                    fat
                                     isSubmit
                                 >
-                                    Order
+                                    Submit Order
                                 </Button>
                             </div>
                         </AutoAffix>

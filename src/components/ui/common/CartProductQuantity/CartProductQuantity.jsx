@@ -5,6 +5,7 @@ import s from './CartProductQuantity.scss';
 import IconAngleLeft from '../Icon/Icons/Controls/LeftAngle.jsx';
 import IconAngleRight from '../Icon/Icons/Controls/RightAngle.jsx';
 import { SIZE_TINY as ICON_SIZE, THICKNESS_THICK as ICON_THICKNESS } from '../../../../constants/icon';
+import { COLOR_GRAY } from '../../../../constants/colors';
 
 const DECREASE_TIMEOUT = 1000;
 
@@ -80,6 +81,7 @@ class CartProductQuantity extends Component {
                     {isAvailable && <IconAngleLeft
                         size={ICON_SIZE}
                         thickness={ICON_THICKNESS}
+                        color={COLOR_GRAY}
                         className={s.control}
                         disabled={this.state.quantity === 1}
                         onClick={this.handleDecreaseCount}
@@ -89,6 +91,7 @@ class CartProductQuantity extends Component {
                         size={ICON_SIZE}
                         thickness={ICON_THICKNESS}
                         className={s.control}
+                        color={COLOR_GRAY}
                         disabled={this.state.quantity >= this.props.maxQuantity}
                         onClick={this.handleIncreaseCount}
                     />}

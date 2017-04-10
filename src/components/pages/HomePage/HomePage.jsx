@@ -8,7 +8,7 @@ import Link from '../../ui/common/Link';
 import s from './HomePage.scss';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 
-const title = 'Home';
+const title = 'Minimalist, Superfood Skincare';
 
 @withStyles(s)
 class HomePage extends Component {
@@ -26,10 +26,10 @@ class HomePage extends Component {
         return (
             <div>
                 <Row>
-                        <Hero src='/images/homepage-hero.jpg' link='/products/all-products' header="Personalized Skincare" subheader="We make awesome, minimalist skincare that will get you laid because guys love a hoe with great skin."
+                        <Hero src='/images/homepage-hero.jpg' link='/products/all-products' header="Minimalist Skincare" subheader="We make awesome, minimalist skincare that will get you laid because guys love a hoe with great skin."
                         button="Shop Now" />
                 </Row>
-                <Row>
+                <Row weak>
                     <Column>
                     <figure className={s.honey}>
                         <Link to='/products/all-products'>

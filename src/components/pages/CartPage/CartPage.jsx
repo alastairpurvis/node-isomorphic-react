@@ -19,7 +19,6 @@ class CartPage extends Component {
     render() {
         return (
             <Container contentArea>
-                <Title text={title} />
                 <Cart />
             </Container>
         );

@@ -3,6 +3,12 @@
 @import '../../../styles/extends/typography.scss';
 
 .root {
+    @media #{$media-mobile} {
+        display: none;
+    }
+   @media #{$media-desktop} {
+        display: inline;
+    }
 }
 
 .row {
@@ -39,7 +45,7 @@
 }
 
 .logo {
-    width: 200px !important;
+    width: 196px !important;
     display: inline-block;
     transition: all .2s;
 
@@ -60,12 +66,10 @@
 
 .link {
     @extend .unselectable;
-    line-height: 24px;
-    letter-spacing: 1px;
-    font-weight: 300;
-    font-size: 14px;
-    text-transform: uppercase;
+    @extend .nav-link;
+    padding: 0 0px 0 5px;
 }
+
 
 .pad {
     margin-left: 10px;

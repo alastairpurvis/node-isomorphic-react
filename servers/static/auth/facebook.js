@@ -6,7 +6,7 @@ function authenticate(res) {
     const
         params = {
             app_id: config.facebook.id,
-            redirect_uri: 'https://sam.null.by/token/facebook',
+            redirect_uri: 'https://www.skinmoderne.com/token/facebook',
             scope: 'public_profile, email'
         },
         stringifiedParams = createURLEncodedString(params, 'GET');
@@ -20,7 +20,7 @@ function getToken(req, res) {
         params = {
             client_id: config.facebook.id,
             client_secret: config.facebook.secret,
-            redirect_uri: 'https://sam.null.by/token/facebook',
+            redirect_uri: 'https://www.skinmoderne.com/token/facebook',
             code
         },
         options = {

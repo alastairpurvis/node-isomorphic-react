@@ -1,7 +1,6 @@
 import React, { Component, PropTypes as pt } from 'react';
 import emptyFunction from '../../node_modules/fbjs/lib/emptyFunction';
-import ComputerLayout from './layouts/ComputerLayout';
-import MobileLayout from './layouts/MobileLayout';
+import BaseLayout from './layouts/BaseLayout';
 import EmptyLayout from './layouts/EmptyLayout';
 import s from './styles/app.scss';
 import watchStores from '../utils/decorators/watchStores';
@@ -97,15 +96,7 @@ class App extends Component {
         );
     }
 
-    renderDesktopLayout() {
-        return (
-            <ComputerLayout showProgress={this.state.showProgress}>
-                {this.props.children}
-            </ComputerLayout>
-        );
-    }
-
-    renderMobileLayout(userAgent) {
+    renderBaseLayout(userAgent) {
         const
             { children } = this.props,
             { showProgress } = this.state,
@@ -114,13 +105,10 @@ class App extends Component {
             showBackIcon = includes(mobilePagesWithBackIcon, currentPage);
 
         return (
-            <MobileLayout
-                showProgress={showProgress}
-                hasFooter={showFooter}
-                showBackIcon={showBackIcon}
-            >
-                {children}
-            </MobileLayout>
+            <BaseLayout showProgress={this.state.showProgress} hasFooter={showFooter}
+                showBackIcon={showBackIcon}>
+                {this.props.children}
+            </BaseLayout>
         );
     }
 
@@ -134,20 +122,8 @@ class App extends Component {
         if (isEmptyLayout) {
             return this.renderEmptyLayout();
         }
-        if(typeof window !== 'undefined'){
-            if (window.innerWidth < 1000) {
-                return this.renderMobileLayout(userAgent);
-            } else {
-                return this.renderDesktopLayout();
-            }
-        }
-        else {
-            if (!userAgent.isDesktop) {
-                return this.renderMobileLayout(userAgent);
-            } else {
-                return this.renderDesktopLayout();
-            }
-        }
+        return this.renderBaseLayout(userAgent);
+
     }
 }
 

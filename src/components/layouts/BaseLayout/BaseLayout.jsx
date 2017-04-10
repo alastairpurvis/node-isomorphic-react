@@ -1,21 +1,22 @@
 import React, { Component, PropTypes as pt } from 'react';
-import Header from '../../ui/mobile/Header';
-import Progress from '../../ui/common/Progress';
-import s from './MobileLayout.scss';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import Mask from '../../ui/common/Mask';
+import Header from '../../ui/pc/Header';
+import HeaderMobile from '../../ui/mobile/Header';
 import Navigation from '../../ui/mobile/Navigation';
+import Slide from '../../ui/common/Slide';
+import Progress from '../../ui/common/Progress';
 import SubFooter from '../../ui/common/SubFooter';
 import Footer from '../../ui/common/Footer';
+import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import s from './BaseLayout.scss';
+import Mask from '../../ui/common/Mask';
 import cx from 'classnames';
-import Slide from '../../ui/common/Slide';
 
 const
     MASK_OPACITY = 0.2,
     FULL_SCREEN_WIDTH = '-100vw';
 
 @withStyles(s)
-class MobileLayout extends Component {
+class ComputerLayout extends Component {
     static contextTypes = {
         getCookie: pt.func.isRequired,
         setCookie: pt.func.isRequired
@@ -33,7 +34,6 @@ class MobileLayout extends Component {
         showProgress: false,
         showBackIcon: false
     };
-
 
     state = {
         menuShowed: false
@@ -70,18 +70,19 @@ class MobileLayout extends Component {
     }
 
     render() {
-        const
+       const
             { menuShowed } = this.state;
 
         return (
-            <div className={s.root}>
+            <div>
                 {this.props.showProgress && <Progress />}
+                <Header />
                 <Mask
                     className={s.mask}
                     visible={menuShowed}
                     opacity={MASK_OPACITY}
                 />
-                <Header
+                <HeaderMobile
                     className={cx(s.header, s.fixed)}
                     showBackIcon={this.props.showBackIcon}
                     onMenuClick={this.handleMenuClick}
@@ -98,7 +99,8 @@ class MobileLayout extends Component {
                         onClick={this.handleNavigationClick}
                     />
                 </Slide>
-                <div className={cx(s.content, s.hasTopPadding)}>
+                <div className={cx(s.content)}>
+                    <div className={cx(s.mobile, s.hasTopPadding)} />
                     {this.props.children}
                 </div>
                 <SubFooter />
@@ -106,6 +108,7 @@ class MobileLayout extends Component {
             </div>
         );
     }
+
 }
 
-export default MobileLayout;
+export default ComputerLayout;

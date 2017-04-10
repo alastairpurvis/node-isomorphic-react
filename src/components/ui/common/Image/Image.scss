@@ -14,8 +14,13 @@
 
     &:hover {
         opacity:.5;
+        filter: blur(1px);
     }
 }
 .productImage {
     max-height: 540px !important;
+
+    @media #{$media-phone} {
+        max-height: 360px !important;
+    }
 }

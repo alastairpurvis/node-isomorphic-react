@@ -60,7 +60,7 @@ class Header extends Component {
         return (
             <Link
                 custom
-                className={s.hamburger}
+                className={s.backIcon}
                 to={this.state.backPath}
             >
                 <IconBack size={SIZE_SMALL} />
@@ -70,12 +70,13 @@ class Header extends Component {
 
     render() {
         return (
+            <div>
             <div id={this.props.id} className={cx(s.root, this.props.className)}>
                 <div className={s.leftIconsBlock}>
                     {this.props.showBackIcon ? this.renderBackIcon() : this.renderMenuIcon()}
                 </div>
                 <Link className={s.logo} to='/'>
-                    <Image src='/images/logo-white.jpg' />
+                    <Image src='/images/logo-white.svg' />
                 </Link>
                 <div className={s.rightIconsBlock}>
                     <Link
@@ -89,6 +90,7 @@ class Header extends Component {
                         </div>
                     </Link>
                 </div>
+            </div>
             </div>
         );
     }

@@ -18,7 +18,6 @@ import cors from 'cors';
 
 const server = global.server = express();
 server.use(secure);
-//apicache.options({ debug: true })
 let cache = apicache.middleware;
 
 // Tell any CSS tooling (such as Material UI) to use all vendor prefixes if the
@@ -26,8 +25,10 @@ let cache = apicache.middleware;
 global.navigator = global.navigator || {};
 global.navigator.userAgent = global.navigator.userAgent || 'all';
 
-// Register Node.js middleware
-server.use(cache('2 weeks'));
+if(process.env.NODE_ENV == 'production'){
+    server.use(cache('2 weeks'));
+}
+
 server.get('*.js', function (req, res, next) {
   req.url = req.url + '.gz';
   res.set('Content-Encoding', 'gzip');

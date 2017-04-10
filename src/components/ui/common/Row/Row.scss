@@ -13,6 +13,15 @@
     }
 }
 
+.weak {
+    @media #{$media-mobile} {
+        flex-direction: row;
+    }
+    @media #{$media-phone} {
+        flex-direction: column;
+    }
+}
+
 .spaceBetween {
     justify-content: space-between;
 }

@@ -36,7 +36,7 @@ class Footer extends Component {
                 <Container>
                     <div className={s.unit}>
                         <Container>
-                            <Row spaceBetween>
+                            <Row weak spaceBetween>
                                 <div className={cx(s.row, s.equal, s.contentLeft)}>
                                     © 2017 <strong>&nbsp;SKIN MODERNE&nbsp;</strong> Inc., All Rights Reserved
                                 </div>

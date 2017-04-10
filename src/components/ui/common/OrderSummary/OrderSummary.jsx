@@ -25,7 +25,7 @@ class OrderSummary extends Component {
 
         return (
             <Section
-                title='total'
+                title='Cart'
                 className={s.orderSummary}
                 hasBottomMargin={false}
             >
@@ -35,7 +35,7 @@ class OrderSummary extends Component {
                 </div>
                 <Separator className={s.separator} />
                 <div className={cx(s.total, s.orderItem)}>
-                    <span>order total</span>
+                    <span>Order total</span>
                     <span>{formatPrice(total, currency)}</span>
                 </div>
             </Section>

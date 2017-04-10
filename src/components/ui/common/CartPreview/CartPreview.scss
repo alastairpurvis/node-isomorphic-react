@@ -1,5 +1,6 @@
 @import '../../../styles/common.scss';
 @import '../../../styles/extends/flex.scss';
+@import '../../../styles/extends/typography.scss';
 
 .root {
     position: relative;
@@ -14,21 +15,21 @@
 .popup {
     position: absolute;
     background-color: $white-color;
-    top: 30px;
+    top: 40px;
     right: 0;
     z-index: 100;
     width: 300px;
     height: auto;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.22);
+    box-shadow: 0 14px 70px 0px rgba(0,0,0,0.22);
     padding: 5px;
 }
 
 .title {
     text-align: center;
     padding-top: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     font-weight: 700;
     font-size: 11px;
     text-transform: uppercase;
@@ -37,4 +38,24 @@
 
 .checkoutButton {
     margin-top: 5px;
+}
+
+.cartLink {
+    @extend .default-link;
+    &:hover {
+       @extend .default-link-hover;
+    }
+}
+
+.cartIcon {
+    padding-left: 10px;
+    padding-right: 5px;
+    margin-bottom: 2px;
+}
+:export  {
+    cartIconColor: $blue-color;
+}
+
+.cartQty {
+    Color: $blue-color;
 }

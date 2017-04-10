@@ -51,6 +51,8 @@
 }
 
 .leftColumn {
+    align-items: center;
+  justify-content: center;
     @media #{$media-desktop} {
         flex-basis: 450px;
     }

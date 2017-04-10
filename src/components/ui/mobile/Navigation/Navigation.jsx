@@ -89,14 +89,23 @@ class Navigation extends Component {
             />
         ));
 
-        return [...links, <Link
-            key='login'
-            name={this.state.isLogged ? 'account' : 'login'}
-            className={s.link}
-            wrapperClassName={s.linkWrapper}
-            to={this.state.isLogged ? routes.PROFILE : routes.LOGIN}
-            onClick={this.handleLinkClick}
-        />];
+        return [...links, 
+            <Link
+                key='about'
+                name='About'
+                className={s.link}
+                wrapperClassName={s.linkWrapper}
+                to='/about'
+                onClick={this.handleLinkClick}
+            />,
+            <Link
+                key='login'
+                name={this.state.isLogged ? 'account' : 'login'}
+                className={s.link}
+                wrapperClassName={s.linkWrapper}
+                to={this.state.isLogged ? routes.PROFILE : routes.LOGIN}
+                onClick={this.handleLinkClick}
+            />];
     }
 
     render() {

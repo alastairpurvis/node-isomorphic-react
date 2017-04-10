@@ -1,5 +1,12 @@
 @import '../../../styles/common.scss';
 @import '../../../styles/extends/flex.scss';
+@import '../../../styles/extends/typography.scss';
+
+.container {
+    @media #{$media-mobile} {
+        padding: 25px 0 25px;
+    }
+}
 
 .header {
     @extend .flex-row;
@@ -25,10 +32,16 @@
     text-transform: uppercase;
     font-weight: 500;
     font-size: 14px;
+    @extend .default-link;
+    &:hover {
+       @extend .default-link-hover;
+    }
 }
 
 .leftColumn {
-    flex: 1 1 100%;
+    @media #{$media-desktop} {
+        flex: 1 1 100%;
+    }
 }
 
 .rightColumn {

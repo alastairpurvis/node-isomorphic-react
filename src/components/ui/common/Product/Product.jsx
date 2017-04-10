@@ -132,10 +132,10 @@ class Product extends Component {
                     <Column
                         className={s.leftColumn}
                         hasRightMargin
-                        alignItems='stretch'
+                        alignItems='center'
                         flowDirection='bottom'
                     >
-                        <ImageViewer className={s.viewer} images={product.images} />
+                        <ImageViewer className={s.viewer} centered images={product.images} />
                     </Column>
                     <Column
                         className={s.info}

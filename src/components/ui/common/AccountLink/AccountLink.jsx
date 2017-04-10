@@ -22,8 +22,8 @@ class AccountLink extends Component {
 
     render() {
         return this.state.isLogged
-            ? <Link {...this.props} to={routes.PROFILE} name='My account' />
-            : <Link {...this.props} to={routes.LOGIN} name='Sign In' />;
+            ? <Link className={s.accountLink} to={routes.PROFILE} name='My account' />
+            : <Link className={s.accountLink} to={routes.LOGIN} name='Sign In' />;
     }
 }
 

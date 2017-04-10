@@ -5,9 +5,16 @@
 .root {
     @extend .flex-row;
     justify-content: space-between;
-    background-color: $white-color;
     line-height: $mobile-header-height;
     text-align: center;
+    @media #{$media-desktop} {
+        display: none;
+    }
+    overflow: hidden;
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    background-color:rgba(255,255,255, 0.8);
+    border-bottom: 1px solid $gray-light-color;
 }
 
 .brand {
@@ -22,20 +29,46 @@
     margin: 0 8px;
 }
 
+.backIcon {
+    margin-right: 15px;
+    padding-left: 6px;
+    padding-right: 6px;
+    @extend .default-link;
+    &:hover {
+       @extend .default-link-hover;
+    }   
+}
 .hamburger,
 .login {
     margin-right: 15px;
+    padding: 6px;
+    @extend .default-link;
+    &:hover {
+       @extend .default-link-hover;
+    }
 }
 
 .logo {
     @extend .unselectable;
-    width: 50% !important;
+    width: 53% !important;
+    max-width: 320px;
     display: inline-block;
+    height: 40px;
     text-align:center;
+    @extend .default-link;
+    &:hover {
+       @extend .default-link-hover;
+    }
 }
 
 .cart {
     position: relative;
+    margin-right: 6px;
+    margin-left: 6px;
+    @extend .default-link;
+    &:hover {
+       @extend .default-link-hover;
+    }
 }
 
 .productLength {

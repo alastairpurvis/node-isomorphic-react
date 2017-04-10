@@ -4,7 +4,8 @@
 .root {
     padding: 10px 0;
     z-index: 20;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(14px);
 }
 
 .inner {
@@ -31,9 +32,15 @@
     @extend .unselectable;
     line-height: 40px;
     letter-spacing: 1px;
+    padding-left: 10px;
+    padding-bottom: 4px;
     text-transform: uppercase;
     font-weight: 600;
     display: block;
+    @extend .default-link;
+    &:hover {
+       @extend .default-link-hover;
+    }
 }
 
 .linkWrapper {
@@ -79,4 +86,9 @@
     position: absolute;
     top: 15px;
     right: 10px;
+    padding: 10px 30px 30px 0px;
+    @extend .default-link;
+    &:hover {
+       @extend .default-link-hover;
+    }
 }

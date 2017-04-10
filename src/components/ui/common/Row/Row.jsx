@@ -7,6 +7,7 @@ function Row({
     className,
     spaceBetween = false,
     spaceAround = false,
+    weak = false,
     children
 }) {
     return (
@@ -15,7 +16,8 @@ function Row({
                 s.root,
                 className, {
                     [s.spaceBetween]: spaceBetween,
-                    [s.spaceAround]: spaceAround
+                    [s.spaceAround]: spaceAround,
+                    [s.weak]: weak
                 }
             )}
         >

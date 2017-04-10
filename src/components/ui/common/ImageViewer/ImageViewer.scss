@@ -42,6 +42,7 @@
 }
 
 .owlPagination {
+    padding-bottom: 5px;
     text-align: center;
 }
 
@@ -60,8 +61,7 @@
 }
 
 .centered {
-    @media #{$media-tablets} {
         display: flex;
         justify-content: center;
-    }
+    
 }

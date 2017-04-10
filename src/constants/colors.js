@@ -4,4 +4,5 @@ export const
     COLOR_RED = '#d62d20',
     COLOR_BLUE = '#3b589b',
     COLOR_CAT = '#c95b1f',
-    COLOR_LIGHT_GRAY = '#e0e0e0';
+    COLOR_LIGHT_GRAY = '#e0e0e0',
+    COLOR_GRAY = 'gray';

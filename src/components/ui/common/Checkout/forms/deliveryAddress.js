@@ -24,13 +24,6 @@ export default component => {
         },
         value: user['first_name']
     }, {
-        name: 'phone',
-        title: 'Phone',
-        validators: {
-            required: true
-        },
-        value: user['phone']
-    }, {
         name: 'email',
         type: 'email',
         title: 'E-mail',
@@ -47,7 +40,11 @@ export default component => {
         validators: {
             required: true
         }
-    }, {
+    },  {
+        name: 'phone',
+        title: 'Phone',
+        value: user['phone']
+    },{
         name: 'shipping.address1',
         title: 'Address',
         validators: {
@@ -59,11 +56,17 @@ export default component => {
         type: 'select',
         title: 'Country',
         options: regions,
+        validators: {
+            required: true
+        },
         defaultValue: 'USA',
         value: user['shipping']['state']
     }, {
         name: 'shipping.city',
         title: 'City',
+        validators: {
+            required: true
+        },
         value: user['shipping']['city']
     }, {
         name: 'comments',

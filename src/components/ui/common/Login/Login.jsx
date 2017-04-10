@@ -39,7 +39,7 @@ class Login extends Component {
                 <div className={s.thirdPartyAuth}>
                     <Button
                         frame={false}
-                        color={COLOR_BLUE}
+                        color='fb'
                         onClick={this.handleFacebookAuthClick}
                     >
                         <IconFacebook
