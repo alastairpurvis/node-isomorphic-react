@@ -1,5 +1,6 @@
 @import '../../../styles/common.scss';
 @import '../../../styles/extends/typography.scss';
+@import '../../../styles/extends/ui.scss';
 
 .root {
     @extend .unselectable;
@@ -8,13 +9,23 @@
     height: auto;
 }
 
+.productSmallThumb {
+    max-height: 90px;
+    @extend .product-thumbnail;
+}
 .productThumb {
-    max-height: 270px !important;
-    transition:.3s;
-
-    &:hover {
-        opacity:.5;
-        filter: blur(1px);
+    @extend .product-thumbnail;
+    @media #{$media-mobile} {
+        max-height: 205px;
+        width: auto;
+    }
+    @media #{$media-desktop} {
+        height: 235px;
+        width: auto;
+    }
+    @media #{$media-desktop-large} {
+        height: 260px;
+        width: auto;
     }
 }
 .productImage {

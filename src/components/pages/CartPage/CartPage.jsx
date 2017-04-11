@@ -18,9 +18,7 @@ class CartPage extends Component {
 
     render() {
         return (
-            <Container contentArea>
                 <Cart />
-            </Container>
         );
     }
 

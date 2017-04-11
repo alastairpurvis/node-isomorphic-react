@@ -34,14 +34,18 @@ export default (component, s) => {
         onClick: component.handleInputClick,
         value: user['shipping']['address1']
     }, {
-        name: 'shipping.state',
+        name: 'shipping.country',
         type: 'select',
         title: 'Country',
         options: regions,
-        defaultValue: 'United States',
+        onClick: component.handleInputClick,
+        value: user['shipping']['country']
+    }, {
+        name: 'shipping.state',
+        title: 'State',
         onClick: component.handleInputClick,
         value: user['shipping']['state']
-    }, {
+    },  {
         name: 'shipping.city',
         title: 'City',
         onClick: component.handleInputClick,
@@ -51,9 +55,11 @@ export default (component, s) => {
         type: 'component',
         component: (
             <div className={s.buttons}>
-                <Button isSubmit className={s.editButton}>
-                    {component.state.isEditMode ? 'Save' : 'Edit'}
-                </Button>
+                {component.state.isEditMode &&
+                    <Button isSubmit className={s.editButton}>
+                        Save
+                    </Button>
+                }
                 {isEditMode && <Button color={COLOR_WHITE} onClick={component.handleCancelClick}>
                     Cancel
                 </Button>}

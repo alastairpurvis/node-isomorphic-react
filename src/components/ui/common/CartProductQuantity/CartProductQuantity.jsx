@@ -86,7 +86,7 @@ class CartProductQuantity extends Component {
                         disabled={this.state.quantity === 1}
                         onClick={this.handleDecreaseCount}
                     />}
-                    <div className={s.quantity}>{this.state.quantity} pcs.</div>
+                    <div className={s.quantity}>{this.state.quantity}</div>
                     {isAvailable && <IconAngleRight
                         size={ICON_SIZE}
                         thickness={ICON_THICKNESS}

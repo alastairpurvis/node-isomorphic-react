@@ -13,6 +13,7 @@ class CartStore extends Store {
         [actionTypes.CART_CLEAR]: 'cartClear',
         [actionTypes.CART_ITEM_QUANT_CHANGE]: 'quantChanged',
         [actionTypes.CART_PRODUCT_ADD]: 'cartProductAdd',
+        [actionTypes.CART_PRODUCT_SYNC]: 'cartSyncId',
         [actionTypes.CART_PRODUCT_REMOVE]: 'cartProductRemove',
     };
 
@@ -101,13 +102,15 @@ class CartStore extends Store {
                 product,
                 ...variantObj
             };
-            this.total += data.price_total;
+            
+            this.total += data.price;
 
             this.emit('change');
         }
     }
 
     cartProductRemove(data) {
+
         if (this.cartId === data.cart_id && this.productsById[data.id]) {
             delete this.productsById[data.id];
             this.total -= data.price_total;

@@ -1,0 +1,27 @@
+@import '../../../../styles/common';
+@import '../../../../styles/extends/flex';
+@import '../../../../styles/extends/typography';
+
+.root {
+    align-items: center;
+    @extend .flex-column;
+    justify-content: center;
+    padding: 45px 0 45px;
+}
+
+.total {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.notice {
+    font-size: 12px;
+    color: $gray-dark-color;
+}
+
+.checkoutButton {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    padding-left: 60px !important;
+    padding-right: 60px !important;
+}

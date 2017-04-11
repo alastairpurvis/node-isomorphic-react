@@ -48,11 +48,14 @@ class Header extends Component {
 
     renderMenuIcon() {
         return (
-            <IconMenu
+            <div
                 className={s.hamburger}
                 onClick={this.handleMenuIconClick}
+            >
+            <IconMenu
                 size={SIZE_SMALL}
             />
+            </div>
         );
     }
 
@@ -67,6 +70,7 @@ class Header extends Component {
             </Link>
         );
     }
+    
 
     render() {
         return (

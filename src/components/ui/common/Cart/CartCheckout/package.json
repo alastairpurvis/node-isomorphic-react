@@ -1,0 +1,6 @@
+{
+    "name": "CartCheckout",
+    "version": "0.0.0",
+    "private": true,
+    "main": "./CartCheckout.jsx"
+}

@@ -1,0 +1,20 @@
+.button-press {
+    &:hover {
+         filter: none;
+    }
+    &:active {
+         filter: saturate(300%);
+    }
+}
+
+.product-thumbnail {
+    transition:.3s;
+
+    &:hover {
+        opacity:.5;
+        filter: blur(1px);
+    }
+	&:active {
+		filter: blur(4px);
+	}
+}

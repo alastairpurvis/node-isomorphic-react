@@ -21,7 +21,8 @@ class Button extends Component {
             COLOR_WHITE,
             COLOR_BLACK,
             COLOR_BLUE,
-            COLOR_CAT
+            COLOR_CAT,
+            'fb'
         ]),
         icon: pt.element,
         disabled: pt.bool,

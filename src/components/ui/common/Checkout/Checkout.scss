@@ -10,21 +10,27 @@
 
 .header {
     @extend .flex-row;
-    justify-content: space-between;
+    justify-content: center;
     position: relative;
-    margin-bottom: 60px;
+    margin-bottom: 35px;
+    margin-top: 10px;
     padding: 20px 0 20px;
+    @media #{$media-mobile} {
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
 }
 
 .logo {
     font-size: 24px;
     letter-spacing: 1px;
-    width: 200px !important;
+    width: 195px !important;
     display: inline-block;
     transition: all .2s;
+    opacity: 0.6;
 
     &:hover {
-       opacity: 0.6;
+       opacity: 0.4;
     }
 }
 
@@ -46,6 +52,7 @@
 
 .rightColumn {
     @media #{$media-desktop} {
+        margin-top: 50px;
         flex: 1 0 370px;
     }
 

@@ -90,19 +90,19 @@ class Product extends Component {
         const
             { state } = this.optionsRef,
             ids = map(state, option => option.id),
-            { product } = this.state,
+            { cartId, product, productsById } = this.state,
             variantId = find(product.variants,
                 ({ option_value_ids }) => reduce(ids,
                     (memo, id) => memo && includes(option_value_ids, id),
                     true)).id;
 
-        this.getCart()
-                .then(data => this.context.executeAction('cart/addProduct', {
-                    id: data.id,
+                this.context.executeAction('cart/addProduct', {
+                    id: cartId,
+                    productsById,
                     product,
                     variant_id: variantId
-                }))
-                .then(() => this.context.executeAction('navigate/to', { url: "/cart" }));
+                });
+        this.context.executeAction('navigate/to', { url: "/cart" });
     };
 
     hasRecommendedProducts(product) {
@@ -110,6 +110,7 @@ class Product extends Component {
     }
 
     loadProduct(slug) {
+        this.getCart();
         this.context.executeAction('products/getBySlug', { slug });
     }
 
@@ -123,7 +124,7 @@ class Product extends Component {
         if (!product) {
             return null;
         }
-
+        
         const description = product.description.split("|");
 
         return (
@@ -144,6 +145,7 @@ class Product extends Component {
                         hasLeftMargin
                     >
                         <ProductInfo product={product} />
+                        <Button fat className={s.addToCart} onClick={this.handleAddProduct}>Add to cart</Button>
                         <Separator className={s.margin} />
                         <ProductDescription text={description[0]} />
                         <Separator className={s.margin} />
@@ -152,7 +154,7 @@ class Product extends Component {
                             onCreate={ref => this.optionsRef = ref}
                         />
                         <br/>
-                        <Button fat onClick={this.handleAddProduct}>Add to cart</Button>
+                        
                         {this.state.showProceedToCheckoutLink && (
                             <Link
                                 custom

@@ -4,8 +4,6 @@ import Promise from 'bluebird';
 
 export default {
     create(context, params) {
-        context.executeAction('progress/show', 'cart-create');
-
         return service({
             path: '/carts',
             method: 'POST',
@@ -19,7 +17,6 @@ export default {
 
                 return data;
             })
-            .finally(() => context.executeAction('progress/hide', 'cart-create'));
     },
 
     delete(context, { id }) {
@@ -49,7 +46,19 @@ export default {
     },
 
     addProduct(context, params) {
-        context.executeAction('progress/show', 'cart-add-product');
+        const numberId = Math.random(9999).toString(36).slice(2);
+        context.dispatch(actionTypes.CART_PRODUCT_ADD, {
+                product: params.product,
+                cart_id: params.id,
+                id: numberId,
+                product_id: params.product.id,
+                variant_id: params.variant_id,
+                price: params.product.price,
+                quantity: 1,
+                price_total: params.product.price_total
+            })
+
+        let fakeData = {cart_id: params.id, id: numberId, price_total: params.product.price};
 
         return service({
             path: `/carts/${params.id}/items`,
@@ -60,11 +69,15 @@ export default {
                 variant_id: params.variant_id
             }
         })
-            .then(data => context.dispatch(actionTypes.CART_PRODUCT_ADD, {
+        .then(
+            function (data) {
+                context.dispatch(actionTypes.CART_PRODUCT_REMOVE, fakeData); 
+                return data;
+            })
+        .then(data => context.dispatch(actionTypes.CART_PRODUCT_ADD, {
                 product: params.product,
                 ...data
             }))
-            .finally(() => context.executeAction('progress/hide', 'cart-add-product'));
     },
 
     changeProductCount(context, { cart_id, product_id, variant_id, quantity }) {
@@ -83,14 +96,15 @@ export default {
             }));
     },
 
-    removeProduct(context, { id, productId }) {
-        context.executeAction('progress/show', 'cart-remove-product');
+    removeProduct(context, params) {
+
+        let fakeData = {cart_id: params.id, id: params.productId, price_total: params.price_total};
+
+        context.dispatch(actionTypes.CART_PRODUCT_REMOVE, fakeData)
 
         return service({
-            path: `/carts/${id}/items/${productId}`,
+            path: `/carts/${params.id}/items/${params.productId}`,
             method: 'DELETE'
         })
-            .then(data => context.dispatch(actionTypes.CART_PRODUCT_REMOVE, data))
-            .finally(() => context.executeAction('progress/hide', 'cart-remove-product'));
     }
 };

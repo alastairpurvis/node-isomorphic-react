@@ -25,17 +25,20 @@ class OrderSummary extends Component {
 
         return (
             <Section
-                title='Cart'
                 className={s.orderSummary}
                 hasBottomMargin={false}
             >
                 <div className={s.orderItem}>
-                    <span>Products</span>
+                    <span>Subtotal</span>
                     <span>{formatPrice(total, currency)}</span>
+                </div>
+                <div className={s.orderItem}>
+                    <span>Shipping</span>
+                    <span>Free</span>
                 </div>
                 <Separator className={s.separator} />
                 <div className={cx(s.total, s.orderItem)}>
-                    <span>Order total</span>
+                    <span>Total</span>
                     <span>{formatPrice(total, currency)}</span>
                 </div>
             </Section>

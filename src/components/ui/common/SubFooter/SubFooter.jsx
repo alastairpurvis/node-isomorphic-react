@@ -18,9 +18,7 @@ class SubFooter extends Component {
         return (
             <div className={s.root}>
                 <Separator />
-                <Container>
-                    <div className={s.unit}>
-                        <Container>
+                <Container fullWidth>
                             <Row weak spaceBetween>
                                 <div className={cx(s.row, s.equal, s.contentLeft)}>
                                     <div className={cx(s.row, s.equal, s.contentLeft)}>
@@ -59,8 +57,6 @@ class SubFooter extends Component {
                                 Skincare tips and news from your friends at Skin Moderne.
                                 </div>
                             </Row>
-                        </Container>
-                    </div>
                 </Container>
             </div>
         );

@@ -13,7 +13,7 @@ import Price from '../../common/Price';
 import Trashcan from '../../common/Icon/Icons/Trashcan.jsx';
 import { SIZE_EXTRA_SMALL } from '../../../../constants/icon';
 import { isEmpty } from 'lodash';
-import OrderSummary from '../OrderSummary';
+import CartCheckout from './CartCheckout/CartCheckout';
 import CartProductQuantity from '../../common/CartProductQuantity';
 import { COLOR_GRAY } from '../../../../constants/colors';
 import IconCartShopping from '../../common/Icon/Icons/CartShopping';
@@ -51,10 +51,10 @@ class Cart extends Component {
 
     handleRemoveFromCart = product => {
         const { cartId } = this.context.getStore('cart').getState();
-
         this.context.executeAction('cart/removeProduct', {
             id: cartId,
-            productId: product.id
+            productId: product.id,
+            price_total: product.price*product.quantity
         });
     };
 
@@ -82,15 +82,28 @@ class Cart extends Component {
         }
 
         return (
+            <div>
             <Row>
-            <Column hasRightMargin
-                        alignItems='stretch'
+            <Column alignItems='stretch'
+                        className={s.checkoutArea}
+                        flowDirection='bottom'>
+                <Container>
+                <div className={s.orderForm}>
+                    <CartCheckout />
+                </div>
+                </Container>
+            </Column>
+            </Row>
+             <Separator className={s.checkoutSeparator}/>
+            <Container>
+            <Row>
+            <Column alignItems='stretch'
                         flowDirection='bottom'
                         className={s.leftColumn}>
                 <div className={cx(s.cartRow, s.headerRow)}>
-                    <div className={s.productColumn}>Product</div>
-                    <div className={s.quantityColumn}>Quantity</div>
-                    <div className={s.priceColumn}>Price</div>
+                    <div className={s.productColumn}></div>
+                    <div className={s.quantityColumn}></div>
+                    <div className={s.priceColumn}></div>
                     <div className={s.removeColumn}></div>
                 </div>
                 {products.map((cartItem, idx) =>
@@ -129,23 +142,9 @@ class Cart extends Component {
                     ]
                 )}
             </Column>
-            <Column alignItems='stretch'
-                        className={s.rightColumn}
-                        flowDirection='bottom'
-                        hasLeftMargin>
-                <div className={s.orderForm}>
-                    <OrderSummary />
-                    <Button
-                        wide 
-                        fat
-                        className={s.checkoutButton}
-                        to={routes.CHECKOUT}
-                    >
-                        Checkout
-                    </Button>
-                </div>
-            </Column>
             </Row>
+            </Container>
+            </div>
         );
     }
 }

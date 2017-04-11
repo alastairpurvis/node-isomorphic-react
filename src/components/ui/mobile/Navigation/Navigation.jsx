@@ -69,43 +69,47 @@ class Navigation extends Component {
     renderLinks() {
         const links = this.state.navigation.map((link, index) => (
             isEmpty(link.links)
-            ? <Link
+            ? <div key={link.name} onClick={this.handleLinkClick}><Link
                 to={link.to}
                 name={link.name}
                 key={link.name}
-                links={link.links}
-                onClick={this.handleLinkClick}
-                className={s.link}
+                className={cx(s.link, s.indented)}
+                custom 
                 wrapperClassName={s.linkWrapper}
-            />
-            : <CollapsibleLink
+            /></div>
+            : <div key={link.name} onClick={this.handleLinkClick}><CollapsibleLink
                 {...link}
                 to={link.to}
                 name={link.name}
                 key={link.name}
-                links={link.links}
-                onClick={this.handleLinkClick}
+                custom 
                 className={s.link}
-            />
+            /></div>
         ));
 
-        return [...links, 
-            <Link
+        return [
+            <div key='catalog' onClick={this.handleLinkClick}><Link
+                key='catalog'
+                name='Products'
+                className={s.link}
+                wrapperClassName={s.linkWrapper}
+                to='/catalog'
+            /></div>,
+            ...links, 
+            <div key='about' onClick={this.handleLinkClick}><Link
                 key='about'
                 name='About'
                 className={s.link}
                 wrapperClassName={s.linkWrapper}
                 to='/about'
-                onClick={this.handleLinkClick}
-            />,
-            <Link
+            /></div>,
+            <div key='login' onClick={this.handleLinkClick}><Link
                 key='login'
                 name={this.state.isLogged ? 'account' : 'login'}
                 className={s.link}
                 wrapperClassName={s.linkWrapper}
                 to={this.state.isLogged ? routes.PROFILE : routes.LOGIN}
-                onClick={this.handleLinkClick}
-            />];
+            /></div>];
     }
 
     render() {

@@ -49,14 +49,10 @@ class CategoryNavigation extends Component {
     render() {
         return (
             <div className={s.root}>
-                <Container>
-                    <div className={s.unit}>
-                        <Container>
+                <Container fullWidth>
                             <Row spaceBetween className={cx(s.row, s.equal, s.contentCenter)}>
                                 {this.renderLinks()}
                             </Row>
-                        </Container>
-                    </div>
                 </Container>
                 <Separator />
             </div>

@@ -1,3 +1,5 @@
+@import '../variables/colors.scss';
+
 .unselectable {
     user-select: none;
 }
@@ -16,12 +18,27 @@
 }
 
 .default-link-hover {
-    opacity: 0.5;
+    color: $blue-color !important;
 }
+
+.element-hover {
+    transition: all .2s;
+}
+
 .nav-link {
     line-height: 34px;
     letter-spacing: 1px;
     font-weight: 300;
     font-size: 14px;
     text-transform: uppercase;
+}
+
+.element-link {
+    transition: all .2s;
+    &:hover {
+        opacity: 0.5;
+    }
+    &:active {
+        opacity: 0.3;
+    }
 }

@@ -16,6 +16,22 @@
     }
 }
 
+.addToCartContainer {
+    @media #{$media-mobile} {
+        align-items: center;
+        justify-content: center;
+        width:100%;
+    }
+}
+
+.addToCart {
+    width: 180px;
+    @media #{$media-mobile} {
+        justify-content: center;
+        alignitems: center;
+    }
+}
+
 .panelWrapper {
     border-bottom: 1px solid $gray-color;
     margin-bottom: 5px;

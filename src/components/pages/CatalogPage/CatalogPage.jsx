@@ -24,7 +24,7 @@ class CategoryPage extends Component {
         return (
             <div>
                 <CategoryNav {...this.props} />
-                <Container showScrollToTop contentArea>
+                <Container showScrollToTop contentArea fullWidth>
                     <Catalog {...this.props} />
                 </Container>
             </div>

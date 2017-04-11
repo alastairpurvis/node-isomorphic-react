@@ -26,59 +26,51 @@
 .rightIconsBlock {
     @extend .flex-row;
     align-items: center;
-    margin: 0 8px;
+    margin: 0 0;
+}
+.leftIconsBlock {
+
 }
 
-.backIcon {
-    margin-right: 15px;
-    padding-left: 6px;
-    padding-right: 6px;
-    @extend .default-link;
-    &:hover {
-       @extend .default-link-hover;
-    }   
-}
 .hamburger,
+.backIcon,
 .login {
-    margin-right: 15px;
-    padding: 6px;
-    @extend .default-link;
-    &:hover {
-       @extend .default-link-hover;
-    }
+    padding: 25px;
+    padding-right: 40px;
+    margin-top: -25px;
+    margin-left: -10px;
+    cursor: pointer;
+    margin-bottom: -25px;
+    @extend .element-link;
 }
 
 .logo {
     @extend .unselectable;
-    width: 53% !important;
+    width: 58% !important;
     max-width: 320px;
     display: inline-block;
     height: 40px;
     text-align:center;
     @extend .default-link;
-    &:hover {
-       @extend .default-link-hover;
-    }
 }
 
 .cart {
-    position: relative;
-    margin-right: 6px;
-    margin-left: 6px;
+    padding: 25px;
+    margin-right: -10px;
+    margin-top: -25px;
+    margin-bottom: -25px;
     @extend .default-link;
-    &:hover {
-       @extend .default-link-hover;
-    }
 }
 
 .productLength {
     position: absolute;
     top: 2px;
+    left: 50%;
     width: 100%;
     height: 100%;
     justify-content: center;
-    align-items: center;
-    display: flex;
-    font-size: 10px;
+    align-items: right;
+    display: none;
+    font-size: 0px;
     font-weight: 500;
 }

@@ -4,7 +4,7 @@ $green-color: #008744;
 $light-green-color: #5cb85c;
 
 $blue-color: #47aab6;
-$sky-blue-color: lighten($blue-color,20%);
+$sky-blue-color: lighten(saturate($blue-color,20%), 10%);
 
 $fb-color: #3b589b;
 $fb-color-hover: #42A5F5;
@@ -14,7 +14,7 @@ $red-color: #d62d20;
 $yellow-color: #ffa700;
 
 $call-to-action-color: #eb6d54;
-$call-to-action-color-hover: lighten($call-to-action-color,15%);
+$call-to-action-color-hover: lighten(saturate($call-to-action-color,95%), 12%);
 
 $aqua-color: 4bb5c2;
 $cyan-dark-color: #00bcd4;
@@ -22,7 +22,7 @@ $cyan-middle-color: #80deea;
 $cyan-super-dark-color: #04bdd4;
 
 $gray-color: #999;
-$gray-extra-light-color: #f1f1f1;
+$gray-extra-light-color: #f9f9f9;
 $gray-light-color: #e0e0e0;
 $gray-semi-light-color: #dbdbdb;
 $gray-dark-color: #707070;

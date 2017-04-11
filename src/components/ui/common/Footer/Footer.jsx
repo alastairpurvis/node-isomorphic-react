@@ -33,9 +33,7 @@ class Footer extends Component {
     render() {
         return (
             <div className={s.root}>
-                <Container>
-                    <div className={s.unit}>
-                        <Container>
+                <Container fullWidth>
                             <Row weak spaceBetween>
                                 <div className={cx(s.row, s.equal, s.contentLeft)}>
                                     © 2017 <strong>&nbsp;SKIN MODERNE&nbsp;</strong> Inc., All Rights Reserved
@@ -44,8 +42,6 @@ class Footer extends Component {
                                     {this.renderLinks()}
                                 </div>
                             </Row>
-                        </Container>
-                    </div>
                 </Container>
             </div>
         );

@@ -114,7 +114,8 @@ class Input extends Component {
                         disabled={disabled}
                         readOnly={!editable}
                         value={this.state.value}
-                        autoFocus={autoFocus}
+                        autoFocus={autoFocus} 
+                        autoComplete={type} 
                     />
                     <div className={cx(s.message, {
                         [s.error]: invalid

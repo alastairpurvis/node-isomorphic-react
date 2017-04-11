@@ -4,8 +4,8 @@
 .root {
     padding: 10px 0;
     z-index: 20;
-    background-color: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(14px);
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
 }
 
 .inner {
@@ -22,7 +22,8 @@
 }
 
 .links {
-    padding: 0 20px;
+    padding: 25px 35px;
+    width: 60%;
     height: 100%;
     overflow: auto;
     flex-direction: column;
@@ -32,15 +33,16 @@
     @extend .unselectable;
     line-height: 40px;
     letter-spacing: 1px;
-    padding-left: 10px;
-    padding-bottom: 4px;
+    padding-left: 26px;
+    padding-bottom: 5px;
     text-transform: uppercase;
     font-weight: 600;
     display: block;
-    @extend .default-link;
-    &:hover {
-       @extend .default-link-hover;
-    }
+    @extend .element-link;
+}
+
+.indented {
+    padding-left: 50px;
 }
 
 .linkWrapper {
@@ -84,11 +86,8 @@
 
 .close {
     position: absolute;
-    top: 15px;
+    top: 25px;
     right: 10px;
     padding: 10px 30px 30px 0px;
-    @extend .default-link;
-    &:hover {
-       @extend .default-link-hover;
-    }
+    @extend .element-link;
 }

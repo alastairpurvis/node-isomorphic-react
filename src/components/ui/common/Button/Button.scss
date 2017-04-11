@@ -1,18 +1,19 @@
 @import '../../../styles/common.scss';
 @import '../../../styles/extends/flex.scss';
 @import '../../../styles/extends/typography.scss';
+@import '../../../styles/extends/ui.scss';
 
 .root {
-    height: 36px;
     display: inline-block;
-    padding: 10px 20px 11px;
-    font-weight: 700;
+    padding: 8px 20px 8px 20px;
+    font-weight: 500;
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: pointer;
     border: 1px solid transparent;
     transition:.3s;
+    @extend .button-press;
 
     &:focus,
     &:active,
@@ -29,12 +30,12 @@
 }
 
 .fat {
-    padding: 15px 25px 34px 25px;
+    padding: 15px 25px 15px 25px;
 }
 .cat {
-    padding: 12px 45px 32px 45px;
-    font-weight: 300;
+    padding: 12px 47px 12px 47px;
     font-size: 14px;
+    font-weight: 300;
 }
 
 .black {

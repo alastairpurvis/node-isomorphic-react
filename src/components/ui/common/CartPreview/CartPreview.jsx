@@ -51,13 +51,12 @@ class CartPreview extends Component {
                 <div className={s.title}>
                     <span>Your Cart ({count})</span>
                 </div>
-                <Separator />
                 <CartProducts />
-                <Separator />
                 <Button
                     wide
                     className={s.checkoutButton}
                     to={routes.CART}
+                    onClick={this.state.showCartPopup=false}
                 >
                     Review Cart
                 </Button>

@@ -18,7 +18,8 @@ import { routes } from '../../../../config';
 import { SIZE_SMALL } from '../../../../constants/icon';
 import { COLOR_WHITE } from '../../../../constants/colors';
 import { AutoAffix } from 'react-overlays';
-import getDeliveryAddressItems from './forms/deliveryAddress';
+import getPersonalItems from './forms/personal';
+import getShippingItems from './forms/shipping';
 import getPaymentMethodItems from './forms/payment';
 import getLoginItems from './forms/login';
 import Image from '../Image';
@@ -127,17 +128,6 @@ class Checkout extends Component {
                 >
                     <Image src='/images/logo-white.svg' />
                 </Link>
-                <nav className={s.nav}>
-                    <Link
-                        custom
-                        className={s.backLink}
-                        to='/cart'
-                    >
-                        <IconArrowLeft size={SIZE_SMALL} />
-                        &nbsp;
-                        Back to cart
-                    </Link>
-                </nav>
             </header>
         );
     }
@@ -157,35 +147,49 @@ class Checkout extends Component {
                         flowDirection='bottom'
                         className={s.leftColumn}
                     >
-                        <Section title='Shipping Address' hasSeparator>
+                        <Section hasSeparator>
                             <TabsPanel
                                 activeTab={this.state.activeTab}
                                 onChange={this.handleActiveTabChange}
                             >
-                                <Tab title={!isLogged ? 'First time here?' : 'Contact information'}>
+                                <Tab title={!isLogged ? 'First time here?' : 'One Step Checkout'}>
+                                    <Section title='Basics' hasSeparator>
                                     <Form
-                                        name='deliveryAddress'
-                                        items={getDeliveryAddressItems(this)}
-                                        showLabels
+                                        name='personal'
+                                        items={getPersonalItems(this)}
                                         labelsPosition={isDesktop ? 'left' : 'top'}
+                                        autoComplete="On"
                                         onSubmit={this.handleDeliveryAddressSubmit}
                                     />
+                                    </Section>
+                                    <Section title='Ship To' hasSeparator>
+                                    <Form
+                                        name='deliveryAddress'
+                                        items={getShippingItems(this)}
+                                        labelsPosition={isDesktop ? 'left' : 'top'}
+                                        autoComplete="On"
+                                        onSubmit={this.handleDeliveryAddressSubmit}
+                                    />
+                                    </Section>
+                                    <Section title='Bill To'>
+                                    <Form
+                                                name='payment'
+                                                items={getPaymentMethodItems(this)}
+                                                labelsPosition={isDesktop ? 'left' : 'top'}
+                                                autoComplete="On"
+                                                onSubmit={this.handleDeliveryAddressSubmit}
+                                            />
+                                </Section>
                                 </Tab>
                                 {!isLogged && <Tab title='Login'>
                                     <Form
                                         items={getLoginItems(this, s)}
-                                        showLabels
                                         labelsPosition={isDesktop ? 'left' : 'top'}
                                         onSubmit={this.handleLoginSubmit}
                                         errors={this.state.errors}
                                     />
                                 </Tab>}
                             </TabsPanel>
-                        </Section>
-                        <Section title='Payment' hasSeparator>
-                            <Form
-                                items={getPaymentMethodItems(this)}
-                            />
                         </Section>
                     </Column>
                     <Column

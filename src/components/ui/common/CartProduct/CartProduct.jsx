@@ -25,13 +25,12 @@ const CartProduct = ({
             to={routes.PRODUCT + '/' + product.slug}
             className={s.image}
         >
-            <Image src={image && image.url} />
+            <Image className="productSmallThumb" src={image && image.url} />
         </Link>
         <div className={cx(s.text, { [s.centerText]: isMobile })}>
             <div className={s.name}>
                 {product.name}
             </div>
-            <div className={s.variant}>Size {item.variant.name}</div>
             {showPrice && <Price
                 className={s.price}
                 amount={product.price}

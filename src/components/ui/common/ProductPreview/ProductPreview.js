@@ -38,7 +38,7 @@ class ProductPreview extends Component {
                         name={product.name}
                         className={s.title}
                     />
-
+                  Gentle Cleansing Serum
                     <Price
                         className={cx(s.smartAlign, s.price)}
                         amount={product.price}

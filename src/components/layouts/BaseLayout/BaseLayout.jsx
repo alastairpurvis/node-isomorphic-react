@@ -16,7 +16,7 @@ const
     FULL_SCREEN_WIDTH = '-100vw';
 
 @withStyles(s)
-class ComputerLayout extends Component {
+class BaseLayout extends Component {
     static contextTypes = {
         getCookie: pt.func.isRequired,
         setCookie: pt.func.isRequired
@@ -111,4 +111,4 @@ class ComputerLayout extends Component {
 
 }
 
-export default ComputerLayout;
+export default BaseLayout;

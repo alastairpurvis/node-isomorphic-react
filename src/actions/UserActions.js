@@ -19,7 +19,7 @@ export default {
 
                     return data;
                 } else {
-                    throw Error("Неправильный e-mail или пароль.");
+                    throw Error("Incorrect e-mail or password.");
                 }
             })
             .finally(() => context.executeAction('progress/hide', 'user-login'));

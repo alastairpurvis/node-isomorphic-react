@@ -10,7 +10,7 @@ const ProductInfo = ({ product, className }) =>
             {product.name}
         </div>
         <div className={cx(s.smartAlign, s.sku)}>
-            {product.summary}
+            Natural Moisturizer and Sun Protection
         </div>
         <Price
             className={cx(s.smartAlign, s.price)}
@@ -18,8 +18,6 @@ const ProductInfo = ({ product, className }) =>
             currency={product.currency}
         />
         <br/>
-        <li>Free shipping and 30 day returns</li>
-        <li>Made in USA</li>
     </section>;
 
 export default withStyles(s)(ProductInfo);

@@ -36,15 +36,13 @@
 }
 
 .input {
-    font-size: 12px;
     letter-spacing: 1px;
     font-weight: 400;
     border: none;
     border-bottom: 1px solid $gray-dark-color;
     color: $gray-dark-color;
-    background-color: $white-color;
-    padding: 7px;
-
+    background-color:  $gray-extra-light-color;
+    padding: 15px 20px;
     &:focus,
     &:active,
     &:hover {
@@ -60,12 +58,11 @@
 .blackFrame {
     border: 1px solid $gray-semi-light-color;
     border-radius: 0;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.3s ease-in-out;
     &:hover {
        border: 1px solid $blue-color;  
     }
     &:focus {
-        box-shadow: 0 0 5px $blue-color;  
         border: 1px solid $blue-color;  
     }
 }

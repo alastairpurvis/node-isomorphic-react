@@ -13,7 +13,7 @@ function CheckoutSuccess() {
                 <div>
                     Your order has been accepted.
                     <br />
-                    We'll call you to clarify the delivery time.
+                    We'll shoot you an email to confirm receipt.
                 </div>
             </article>
             <Button

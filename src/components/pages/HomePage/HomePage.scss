@@ -1,4 +1,5 @@
 @import '../../styles/common';
+@import '../../styles/extends/ui.scss';
 
 .honey {
 	position: relative;
@@ -24,6 +25,10 @@
 
 .honey:hover img {
 	opacity: 0.4;
+}
+
+.honey:active img {
+	opacity: 0.2;
 }
 
 .honey figcaption {

@@ -59,7 +59,6 @@ class Login extends Component {
                     items={getLoginItems(this, s)}
                     onSubmit={this.handleSubmit}
                     errors={this.state.errors}
-                    showLabels={isDesktop}
                 />
             </div>
         );

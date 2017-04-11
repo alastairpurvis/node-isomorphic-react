@@ -33,7 +33,7 @@ export default (component, s) => {
             <Link
                 underlined
                 to={routes.FORGOTTEN_PASSWORD}
-                name='Forgot you password?'
+                name='Forgot your password?'
             />
         )
     }, {
