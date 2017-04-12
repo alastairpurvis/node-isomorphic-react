@@ -1,5 +1,6 @@
 import { routes } from '../../config';
 import { forEach, filter, isNil, chain } from 'lodash';
+import { includes } from 'lodash';
 
 const BACK_POINT_PATHS = [
     routes.PRODUCTS,

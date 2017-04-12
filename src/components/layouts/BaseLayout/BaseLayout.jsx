@@ -74,7 +74,7 @@ class BaseLayout extends Component {
             { menuShowed } = this.state;
 
         return (
-            <div>
+            <div className={s.root}>
                 {this.props.showProgress && <Progress />}
                 <Header />
                 <Mask
@@ -103,8 +103,8 @@ class BaseLayout extends Component {
                     <div className={cx(s.mobile, s.hasTopPadding)} />
                     {this.props.children}
                 </div>
-                <SubFooter />
-                <Footer />
+                <SubFooter className={s.footers}/>
+                <Footer className={s.footers} />
             </div>
         );
     }

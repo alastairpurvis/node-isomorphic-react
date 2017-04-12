@@ -2,6 +2,10 @@
 
 .root {
     margin-bottom: 30px;
+    margin-top: 15px;
+    @media #{$media-phone} {
+        margin-top: -20px;
+    }
 }
 
 .viewer {
@@ -12,14 +16,16 @@
 
 .info {
     @media #{$media-desktop} {
-        flex: 1 0 370px;
+        max-width: 50% !important;
+        flex: 1 0 470px;
     }
 }
 
 .addToCartContainer {
     @media #{$media-mobile} {
-        align-items: center;
-        justify-content: center;
+         margin-top: 0px;
+    }
+    @media #{$media-phone} {
         width:100%;
     }
 }
@@ -68,8 +74,10 @@
 
 .leftColumn {
     align-items: center;
-  justify-content: center;
-    @media #{$media-desktop} {
-        flex-basis: 450px;
+    justify-content: center;
+    max-width: 46%;
+    @media #{$media-phone} {
+        max-width: 100%;
     }
+
 }

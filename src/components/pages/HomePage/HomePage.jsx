@@ -26,7 +26,7 @@ class HomePage extends Component {
         return (
             <div>
                 <Row>
-                        <Hero src='/images/homepage-hero.jpg' link='/products/all-products' header="Minimalist Skincare" subheader="We make simple, yet powerful skincare free of harsh chemicals with only the best ingredients on the market."
+                        <Hero src='/images/homepage-hero.jpg' link='/products/all-products' header="Personalized Skincare" subheader="Simple, powerful skincare free of harsh chemicals with only the best ingredients on the market."
                         button="Shop Now" />
                 </Row>
                 <Row weak>

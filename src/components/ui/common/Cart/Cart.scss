@@ -84,6 +84,14 @@
 .cartIcon {
     margin-left: -2%;
 }
+.emptyArea {
+    display: flex;
+    min-height: 40vh;
+    align-items: center;
+     flex-direction: column;
+     justify-content: center;
+     align-content: stretch; /* Extra space in Cross Axis */
+}
 .empty {
     line-height: 40px;
     font-size: 18px;

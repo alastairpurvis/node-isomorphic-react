@@ -5,7 +5,6 @@
 .root {
     @extend .unselectable;
 
-    max-width: 100%;
     height: auto;
 }
 
@@ -30,8 +29,18 @@
 }
 .productImage {
     max-height: 540px !important;
-
+    width: auto;
+    @media #{$media-mobile} {
+        max-height: 420px !important;
+    }
     @media #{$media-phone} {
+        min-width: 1px;
         max-height: 360px !important;
+    }
+    @media #{$media-phone-mini} {
+        max-height: 300px !important;
+    }
+    @media #{$media-phone-minimum} {
+        max-height: 260px !important;
     }
 }

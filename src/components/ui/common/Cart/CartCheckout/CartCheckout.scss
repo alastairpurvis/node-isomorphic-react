@@ -7,6 +7,7 @@
     @extend .flex-column;
     justify-content: center;
     padding: 45px 0 45px;
+    text-align:center;
 }
 
 .total {
@@ -22,6 +23,6 @@
 .checkoutButton {
     margin-top: 20px;
     margin-bottom: 15px;
-    padding-left: 60px !important;
-    padding-right: 60px !important;
+    padding-left: 70px !important;
+    padding-right: 70px !important;
 }

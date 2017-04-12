@@ -42,8 +42,9 @@
 }
 
 .owlPagination {
-    padding-bottom: 5px;
+    margin-bottom: 10px;
     text-align: center;
+    margin-top: -20px;
 }
 
 .owlPage {
@@ -53,7 +54,8 @@
     opacity: 0.5;
     background: $gray-dark-color;
     display: inline-block;
-    margin-right: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
 
     &.active {
         opacity: 1;

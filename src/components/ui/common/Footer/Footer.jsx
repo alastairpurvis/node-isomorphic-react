@@ -36,7 +36,7 @@ class Footer extends Component {
                 <Container fullWidth>
                             <Row weak spaceBetween>
                                 <div className={cx(s.row, s.equal, s.contentLeft)}>
-                                    © 2017 <strong>&nbsp;SKIN MODERNE&nbsp;</strong> Inc., All Rights Reserved
+                                    © 2017 SKIN MODERNE Inc.
                                 </div>
                                 <div className={cx(s.row,  s.contentLeft)}>
                                     {this.renderLinks()}

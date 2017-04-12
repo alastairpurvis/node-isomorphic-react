@@ -128,12 +128,12 @@ class Product extends Component {
         const description = product.description.split("|");
 
         return (
-            <div>
-                <Row className={s.root}>
+            <div className={s.root}>
+                <Row weak>
                     <Column
                         className={s.leftColumn}
                         hasRightMargin
-                        alignItems='center'
+                        alignItems='stretch'
                         flowDirection='bottom'
                     >
                         <ImageViewer className={s.viewer} centered images={product.images} />
@@ -145,7 +145,9 @@ class Product extends Component {
                         hasLeftMargin
                     >
                         <ProductInfo product={product} />
+                        <div className={s.addToCartContainer}>
                         <Button fat className={s.addToCart} onClick={this.handleAddProduct}>Add to cart</Button>
+                        </div>
                         <Separator className={s.margin} />
                         <ProductDescription text={description[0]} />
                         <Separator className={s.margin} />

@@ -22,8 +22,8 @@ class Header extends Component {
                 <Container fullWidth>
                     <div className={cx(s.row, s.spaceBetween, s.center, s.high)}>
                     <div className={cx(s.one, s.contentLeft)}>
-                        <Link className={s.logo} to='/'>
-                            <Image src='/images/logo-white.svg' />
+                        <Link to='/'>
+                            <Image className={s.logo}src='/images/logo-white.svg' />
                         </Link>
                     </div>
                         <div className={cx(s.row, s.equal, s.contentLeft)}>

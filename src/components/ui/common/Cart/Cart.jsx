@@ -64,8 +64,9 @@ class Cart extends Component {
 
         if (isEmpty(products)) {
                 return (
-                <Container contentArea>
+                <Container contentArea className={s.emptyContainer}>
                     <Column 
+                        className={s.emptyArea} 
                         alignItems='center'
                         flowDirection='bottom'>
                         <IconCartShopping

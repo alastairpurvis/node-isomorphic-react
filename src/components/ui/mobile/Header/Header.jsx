@@ -79,8 +79,8 @@ class Header extends Component {
                 <div className={s.leftIconsBlock}>
                     {this.props.showBackIcon ? this.renderBackIcon() : this.renderMenuIcon()}
                 </div>
-                <Link className={s.logo} to='/'>
-                    <Image src='/images/logo-white.svg' />
+                <Link to='/'>
+                    <Image className={s.logo} src='/images/logo-white.svg' />
                 </Link>
                 <div className={s.rightIconsBlock}>
                     <Link

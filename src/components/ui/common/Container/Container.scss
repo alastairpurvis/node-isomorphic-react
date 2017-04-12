@@ -28,7 +28,10 @@
     padding: 40px 0 40px 0;
 
     @media #{$media-mobile} {
-        padding: 20px 0 20px 0;
+        padding: 40px 20px 40px 20px !important;
+    }
+    @media #{$media-phone} {
+        padding: 20px 20px 20px 20px !important;
     }
 }
 

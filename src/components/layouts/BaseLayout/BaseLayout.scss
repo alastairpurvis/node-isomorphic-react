@@ -1,6 +1,19 @@
 @import '../../styles/common.scss';
 
-.root {}
+.root {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+    flex-grow: 1;
+}
+
+.footers {
+
+}
 
 .navigation {
     @media #{$media-phone} {

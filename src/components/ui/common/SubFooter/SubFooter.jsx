@@ -5,7 +5,10 @@ import cx from 'classnames';
 import Link from '../../common/Link';
 import Container from '../../common/Container';
 import Row from '../../common/Row';
+import Column from "../../common/Column";
+import Form from '../../common/Form';
 import Separator from '../Separator';
+import Button from '../Button';
 import IconFacebook from '../Icon/Icons/SocialNetworks/Facebook.jsx';
 import IconInstagram from '../Icon/Icons/SocialNetworks/Instagram.jsx';
 import IconTwitter from '../Icon/Icons/SocialNetworks/Twitter.jsx';
@@ -15,18 +18,25 @@ import { SIZE_SMALL as ICON_SIZE } from '../../../../constants/icon';
 class SubFooter extends Component {
 
     render() {
+        const newsletterSignup = [{ name: 'email',
+                                    type: 'email',
+                                    title: 'E-mail',
+                                    placeholder: 'Your email here' }];
+
         return (
             <div className={s.root}>
-                <Separator />
                 <Container fullWidth>
                             <Row weak spaceBetween>
-                                <div className={cx(s.row, s.equal, s.contentLeft)}>
-                                    <div className={cx(s.row, s.equal, s.contentLeft)}>
+                                <Column className={s.info}
+                                        alignItems='stretch'
+                                        flowDirection='bottom'
+                                        hasRightMargin>
+                                    <div>
                                         <h3>
                                             Connect with us
                                         </h3>
                                     </div>
-                                    <div className={cx(s.row, s.equal, s.contentLeft)}>
+                                    <div>
                                         <Link
                                             custom
                                             className={s.icon}
@@ -49,13 +59,34 @@ class SubFooter extends Component {
                                             <IconTwitter color="gray" size={ICON_SIZE} />
                                         </Link>
                                     </div>
-                                </div>
-                                <div className={cx(s.row, s.equal,  s.contentLeft)}>
+                                </Column>
+                                <Column className={s.info}
+                                        alignItems='stretch'
+                                        flowDirection='bottom'
+                                        hasLeftMargin>
+                                <Row weak >
                                 <h3>
-                                    Check out the Skin Moderne Blog
+                                    Sign up for our newsletter
                                 </h3>
+                                </Row>
+                                <Row weak >
                                 Skincare tips and news from your friends at Skin Moderne.
-                                </div>
+                                </Row>
+                                <Row weak className={s.newsletterForm}>
+                                <Form
+                                    name='newsletter'
+                                    items={newsletterSignup}
+                                    onSubmit={this.handleSubmit}
+                                />
+                                <Button
+                                    form='newsletter'
+                                    fat
+                                    isSubmit
+                                >
+                                    Sign up
+                                </Button>
+                                </Row>
+                                </Column>
                             </Row>
                 </Container>
             </div>

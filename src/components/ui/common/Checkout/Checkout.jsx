@@ -123,10 +123,9 @@ class Checkout extends Component {
             <header className={s.header}>
                 <Link
                     name='SKIN MODERNE'
-                    wrapperClassName={s.logo}
                     to={routes.HOME}
                 >
-                    <Image src='/images/logo-white.svg' />
+                    <Image className={s.logo} src='/images/logo-white.svg' />
                 </Link>
             </header>
         );
