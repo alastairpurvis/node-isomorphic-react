@@ -110,7 +110,7 @@ const
 
     // Configuration for the client-side bundle (client.js)
     clientConfig = extend(true, {}, config, {
-        entry: './src/client.js',
+        entry: ['babel-polyfill', './src/client.js'],
         output: {
             path: path.join(__dirname, '../build/public'),
             filename: DEBUG ? '[name].js?[hash]' : '[name].[hash].js'
