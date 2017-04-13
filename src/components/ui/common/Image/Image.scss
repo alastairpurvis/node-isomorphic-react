@@ -4,7 +4,7 @@
 
 .root {
     @extend .unselectable;
-
+    display: flex;
     height: auto;
 }
 
@@ -16,6 +16,10 @@
     @extend .product-thumbnail;
     @media #{$media-mobile} {
         max-height: 205px;
+        width: auto;
+    }
+    @media #{$media-phone} {
+        max-height: 190px;
         width: auto;
     }
     @media #{$media-desktop} {
@@ -35,10 +39,10 @@
     }
     @media #{$media-phone} {
         min-width: 1px;
-        max-height: 360px !important;
+        max-height: 340px !important;
     }
     @media #{$media-phone-mini} {
-        max-height: 300px !important;
+        max-height: 280px !important;
     }
     @media #{$media-phone-minimum} {
         max-height: 260px !important;

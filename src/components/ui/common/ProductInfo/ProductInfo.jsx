@@ -10,7 +10,7 @@ const ProductInfo = ({ product, className }) =>
             {product.name}
         </div>
         <div className={cx(s.smartAlign, s.sku)}>
-            Natural Moisturizer and Sun Protection
+            {product.summary}
         </div>
         <Price
             className={cx(s.smartAlign, s.price)}

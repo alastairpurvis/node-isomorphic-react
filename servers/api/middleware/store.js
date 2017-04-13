@@ -151,6 +151,7 @@ function store(server) {
                     'manufacturer_name',
                     'currency',
                     'description',
+                    'summary',
                     'id',
                     'images',
                     'name',

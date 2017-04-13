@@ -25,27 +25,29 @@
     @extend .flex-column;
     justify-content: flex-start;
     align-items: left;
-    margin: 10px;
+    margin-top: 12px;
+    margin-left: 10px;
+    margin-bottom:30px;
     font-size: 12px;
     color: $gray-color;
+    max-width: 54%;
+    @media #{$media-mobile} {
+        max-width: 64%;
+    }
+    @media #{$media-phone} {
+        max-width: 90%;
+    }
 }
 
-.brand {
-    margin: 0 0 5px;
-
-    line-height: 14px;
-
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 3px;
+.summary {
+    @extend .flex-column;
 }
 
 .title {
+    @extend .flex-column;
     margin: 0 0 3px;
 
     line-height: 20px;
-
     font-size: 14px;
     font-weight: 300;
     color: $black-color;

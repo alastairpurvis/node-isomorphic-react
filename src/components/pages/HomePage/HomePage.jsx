@@ -1,12 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import Container from '../../ui/common/Container';
 import Image from '../../ui/common/Image';
-import Hero from '../../ui/common/Hero';
 import Row from '../../ui/common/Row';
 import Column from '../../ui/common/Column';
 import Link from '../../ui/common/Link';
 import s from './HomePage.scss';
+import Button from '../../ui/common/Button';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import { COLOR_CAT} from '../../../constants/colors';
 
 const title = 'Minimalist, Superfood Skincare';
 
@@ -26,8 +27,21 @@ class HomePage extends Component {
         return (
             <div>
                 <Row>
-                        <Hero src='/images/homepage-hero.jpg' link='/products/all-products' header="Personalized Skincare" subheader="Simple, powerful skincare free of harsh chemicals with only the best ingredients on the market."
-                        button="Shop Now" />
+                    <div className={s.hero}>
+                        <div className={s.content}>
+                            <h1 className={s.header}>
+                                Personalized Skincare
+                            </h1>
+                            <h4 className={s.subheader}>
+                                Simple, powerful skincare free of harsh chemicals with only the best ingredients on the market.
+                            </h4>
+                            <Link to='/products/all-products'>
+                                <Button cat color={COLOR_CAT}>
+                                    Shop Now
+                                </Button>
+                            </Link>
+                        </div>
+                    </div>
                 </Row>
                 <Row weak>
                     <Column>

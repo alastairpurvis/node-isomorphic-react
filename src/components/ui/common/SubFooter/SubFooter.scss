@@ -6,10 +6,8 @@
 .root {
     font-size: 12px;
     background-color: $gray-extra-light-color;
-    padding: 40px 0 40px;
-     @media #{$media-mobile} {
-        padding: 15px 0 15px;
-     }
+    border-top: 3px solid $blue-color;
+    padding: 30px 0 30px;
 }
 
 .high {
@@ -66,16 +64,57 @@
     }
 }
 
+.leftColumn {
+    @media #{$media-phone} {
+        align-items: center;
+        justify-content: center;
+        text-align:center;
+        margin-bottom: 15px;
+    }
+}
+
+.helpLinks {
+    margin-top: 12px;
+    margin-bottom: 25px;
+    margin-left: -15px;
+    @media #{$media-phone} {
+        margin-left: 0;
+    }
+}
 
 .icon {
-    display: inline-block;
-    margin: 0 15px 0 0;
+    display: inline-flex;
+    flex-direction: column;
+    margin: 0 15px 0 15px;
+    text-align:center;
+    text-transform: uppercase;
+}
+.iconSVG {
+    margin-left: 4px;
+    margin-bottom: 12px; 
+}
+
+.helpNotice {
+    @media #{$media-phone} {
+        display: none;
+    }    
+}
+
+.rightColumn {
+    align-items: left;
+    text-align: left;
+    @media #{$media-phone} {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+.newsletterForm {
+    margin-top: 15px;
 }
 
 .newsletterForm input {
     height: 50px !important;
     padding-right: 100px;
-}
-.newsletterForm input {
-    height: 50px !important;
 }

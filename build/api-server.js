@@ -705,7 +705,7 @@ module.exports =
           req.modelPath = '/products';
           req.interface = ['limit', 'page', 'active'];
           req.constParams = (0, _extends3.default)({
-              fields: ['categories', 'manufacturer_name', 'currency', 'description', 'id', 'images', 'name', 'options', 'price', 'runway', 'season', 'slug', 'sku', 'sizes'],
+              fields: ['categories', 'manufacturer_name', 'currency', 'description', 'summary', 'id', 'images', 'name', 'options', 'price', 'runway', 'season', 'slug', 'sku', 'sizes'],
               active: true
           }, createFilterParams(req));
   

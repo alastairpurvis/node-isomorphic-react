@@ -156,18 +156,6 @@ class Product extends Component {
                             onCreate={ref => this.optionsRef = ref}
                         />
                         <br/>
-                        
-                        {this.state.showProceedToCheckoutLink && (
-                            <Link
-                                custom
-                                className={s.proceedToCheckout}
-                                to={routes.CHECKOUT}
-                            >
-                                Proceed to checkout
-                                &nbsp;
-                                <IconTriangleRight size={SIZE_EXTRA_SMALL} />
-                            </Link>
-                        )}
                     </Column>
                 </Row>
                 {this.renderRecommendedProducts(product)}

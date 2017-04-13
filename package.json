@@ -125,6 +125,6 @@
     "build": "NODE_ENV=production ./node_modules/.bin/babel-node tools/run build  -- --release",
     "api": "babel-node servers/api/index.js",
     "devmode": "babel-node tools/run start",
-    "start": "NODE_ENV=production node build/static-server.js"
+    "start": "NODE_ENV=production node build/api-server.js"
   }
 }

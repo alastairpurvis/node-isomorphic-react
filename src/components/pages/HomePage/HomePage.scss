@@ -1,6 +1,51 @@
 @import '../../styles/common';
 @import '../../styles/extends/ui.scss';
 
+.hero {
+	background-image: url('/images/homepage-hero.jpg');
+	background-color: #c7e5e7;
+    width: 100%;
+    height: 550px;
+    background-size: cover;
+    background-position: 49% center;
+    display: flex;
+    align-items: center;
+    @media #{$media-mobile} {
+        height: 450px;
+        background-position: left center;
+		background-image: none;
+    }
+    @media #{$media-desktop-dambo} {
+        height: 60vh;
+    }
+}
+.content {
+  -ms-flex-preferred-size: 38%;
+  flex-basis: 38%;
+  max-width: 440px;
+  margin-top: -30px;
+  margin-left: 10%;
+    @media #{$media-mobile} {
+        -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
+        max-width: 80%;
+    }
+}
+
+.header {
+    text-transform: uppercase;
+    color: $gray-extra-dark-color;
+    line-height: 40px;
+    margin-bottom:-10px;
+}
+
+.subheader {
+    color: $gray-extra-dark-color;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 300;
+}
+
 .honey {
 	position: relative;
 	float: left;

@@ -43,7 +43,6 @@ class Register extends Component {
                     items={getRegisterItems(this)}
                     onSubmit={this.handleSubmit}
                     loading={this.state.loading}
-                    showLabels={isDesktop}
                 />
             </div>
         );

@@ -9,10 +9,11 @@ import Column from "../../common/Column";
 import Form from '../../common/Form';
 import Separator from '../Separator';
 import Button from '../Button';
-import IconFacebook from '../Icon/Icons/SocialNetworks/Facebook.jsx';
-import IconInstagram from '../Icon/Icons/SocialNetworks/Instagram.jsx';
-import IconTwitter from '../Icon/Icons/SocialNetworks/Twitter.jsx';
-import { SIZE_SMALL as ICON_SIZE } from '../../../../constants/icon';
+import IconPhone from '../Icon/Icons/Phone.jsx';
+import IconEnvelope from '../Icon/Icons/Envelope.jsx';
+import IconSearch from '../Icon/Icons/Search.jsx';
+import IconMessenger from '../Icon/Icons/Messenger.jsx';
+import { SIZE_Medium as ICON_SIZE } from '../../../../constants/icon';
 
 @withStyles(s)
 class SubFooter extends Component {
@@ -31,40 +32,54 @@ class SubFooter extends Component {
                                         alignItems='stretch'
                                         flowDirection='bottom'
                                         hasRightMargin>
-                                    <div>
-                                        <h3>
-                                            Connect with us
-                                        </h3>
+                                    <div className={s.leftColumn}>
+                                        <div className={s.helpLinks}>
+                                        <Link
+                                            custom
+                                            className={s.icon}
+                                            to=""
+                                        >
+                                            <IconSearch className={s.iconSVG} color="gray" size={ICON_SIZE} />
+                                            FAQ
+                                        </Link>
+                                        <Link
+                                            custom
+                                            className={s.icon}
+                                            to=""
+                                        >
+                                            <IconEnvelope className={s.iconSVG} color="gray" size={ICON_SIZE} />
+                                            Email
+                                        </Link>
+                                        <Link
+                                            custom
+                                            className={s.icon}
+                                            to=""
+                                        >
+                                            <IconPhone className={s.iconSVG} color="gray" size={ICON_SIZE} />
+                                            Phone
+                                        </Link>
+                                        <Link
+                                            custom
+                                            className={s.icon}
+                                            to=""
+                                        >
+                                            <IconMessenger className={s.iconSVG} color="gray" size={ICON_SIZE} />
+                                            Chat
+                                        </Link>
+                                        </div>
+                                        <div className={s.helpNotice}>
+                                            We're here Monday - Friday<br />
+                                            9am - 5pm PST<br />
+                                            hello@skinmoderne.com
+                                        </div>
                                     </div>
                                     <div>
-                                        <Link
-                                            custom
-                                            className={s.icon}
-                                            to="https://www.facebook.com"
-                                        >
-                                            <IconFacebook color="gray" size={ICON_SIZE} />
-                                        </Link>
-                                        <Link
-                                            custom
-                                            className={s.icon}
-                                            to="https://www.instagram.com"
-                                        >
-                                            <IconInstagram color="gray" size={ICON_SIZE} />
-                                        </Link>
-                                        <Link
-                                            custom
-                                            className={s.icon}
-                                            to="https://www.twitter.com"
-                                        >
-                                            <IconTwitter color="gray" size={ICON_SIZE} />
-                                        </Link>
                                     </div>
                                 </Column>
-                                <Column className={s.info}
-                                        alignItems='stretch'
+                                <Column className={s.rightColumn}
                                         flowDirection='bottom'
                                         hasLeftMargin>
-                                <Row weak >
+                                <Row weak>
                                 <h3>
                                     Sign up for our newsletter
                                 </h3>
