@@ -8,6 +8,7 @@ import s from './HomePage.scss';
 import Button from '../../ui/common/Button';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { COLOR_CAT} from '../../../constants/colors';
+import { CDNname } from '../../../config';
 
 const title = 'Minimalist, Superfood Skincare';
 
@@ -47,7 +48,7 @@ class HomePage extends Component {
                     <Column>
                     <figure className={s.honey}>
                         <Link to='/products/all-products'>
-                            <Image src='/images/tile1.jpg' />
+                            <Image src={CDNname + '/images/tile1.jpg'} />
                             <figcaption>
 							<h2>Face <span>Care</span> <i>Products</i></h2>
 						    </figcaption>
@@ -57,7 +58,7 @@ class HomePage extends Component {
                     <Column>
                     <figure className={s.honey}>
                         <Link to='/products/all-products'>
-                            <Image src='/images/tile2.jpg' />
+                            <Image src={CDNname + '/images/tile2.jpg'} />
                             <figcaption>
 							<h2>Body <span>Care</span> <i>Products</i></h2>
 						    </figcaption>
@@ -67,7 +68,7 @@ class HomePage extends Component {
                     <Column>
                     <figure className={s.honey}>
                         <Link to='/products/all-products'>
-                            <Image src='/images/tile3.jpg' />
+                            <Image src={CDNname + '/images/tile3.jpg'} />
                             <figcaption>
 							<h2>Anti <span>Aging</span> <i>Products</i></h2>
 						    </figcaption>

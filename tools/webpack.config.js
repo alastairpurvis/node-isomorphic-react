@@ -113,7 +113,7 @@ const
         entry: ['babel-polyfill', './src/client.js'],
         output: {
             path: path.join(__dirname, '../build/public'),
-            filename: DEBUG ? '[name].js?[hash]' : '[name].[hash].js'
+            filename: DEBUG ? '[name].js?[hash]' : '[name].js'
         },
 
         // Choose a developer tool to enhance debugging
@@ -212,6 +212,5 @@ const
 
 export default [
     clientConfig,
-    staticServerConfig,
-    apiServerConfig
+    staticServerConfig
 ];

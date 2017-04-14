@@ -1,16 +1,17 @@
 import { canUseDOM } from './utils/env';
 
 export const
-    HOST = process.env.HOST || process.env.BASE_URI || (canUseDOM && window.env && window.env.HOST) || 'http://localhost:5000',
+    HOST = process.env.HOST || process.env.BASE_URI || (canUseDOM && window.env && window.env.HOST) || 'https://skinmoderne-client.appspot.com',
     PORT = process.env.PORT || 8080,
+    CDNname = 'https://skinmodernep-cdn.firebaseapp.com',
+    api = {
+        URL: 'https://skinmoderne-api.appspot.com',
+        VERSION: '/api'
+    },
     baseUrl = HOST,
     siteName = 'Skin Moderne',
     facebook = {
         APP_ID: '<your_facebook_app_id>'
-    },
-    api = {
-        URL: 'https://skinmoderne-api.appspot.com',
-        VERSION: '/api'
     },
     pagination = {
         PAGE_SIZE: 16
@@ -18,6 +19,7 @@ export const
     mail = 'info@skinmoderne.com',
     routes = {
         HOME: '/',
+        INDEX: '/index.html',   
         ABOUT: '/about',
         PRODUCTS: '/products',
         PRODUCT: '/product',

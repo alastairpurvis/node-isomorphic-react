@@ -65,8 +65,6 @@ export default {
             accountId = getCookieClient('account_id'),
             cartId = getCookieClient('cart_id');
 
-        context.executeAction('progress/show', 'session-restore');
-
         if (accountId) {
             if (cartId) {
                 defer = context.executeAction('user/update', { id: accountId, cart_id: cartId })

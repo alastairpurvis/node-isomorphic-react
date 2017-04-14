@@ -1,6 +1,6 @@
 @import '../mixins/fontface.scss';
 
-$OpenSansPath: "../../fonts/opensans" !default;
+$OpenSansPath: "#{$CDN}/fonts/opensans" !default;
 $OpenSansVersion: "1.1.0" !default;
 
 @font-face {

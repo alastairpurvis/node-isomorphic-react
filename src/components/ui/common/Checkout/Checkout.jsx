@@ -23,6 +23,7 @@ import getShippingItems from './forms/shipping';
 import getPaymentMethodItems from './forms/payment';
 import getLoginItems from './forms/login';
 import Image from '../Image';
+import { CDNname } from '../../../../config'
 
 const
     ORDER_FORM_OFFSET_TOP = 60,
@@ -125,7 +126,7 @@ class Checkout extends Component {
                     name='SKIN MODERNE'
                     to={routes.HOME}
                 >
-                    <Image className={s.logo} src='/images/logo-white.svg' />
+                    <Image className={s.logo} src={CDNname + '/images/logo-white.svg'} />
                 </Link>
             </header>
         );

@@ -2,7 +2,7 @@
 @import '../../styles/extends/ui.scss';
 
 .hero {
-	background-image: url('/images/homepage-hero.jpg');
+	background-image: url('#{$CDN}/images/homepage-hero.jpg');
 	background-color: #c7e5e7;
     width: 100%;
     height: 550px;

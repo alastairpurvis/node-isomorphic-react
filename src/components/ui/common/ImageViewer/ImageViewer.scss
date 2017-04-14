@@ -5,12 +5,16 @@
 .viewer {
     margin-bottom: 20px;
     max-height: 600px;
+     display: block;
 }
 
 .previews {
     display: flex;
     align-items: center;
     justify-content: center;
+    @media #{$media-mobile} {
+        display: none;
+    }
 }
 
 .previewImage {
@@ -45,6 +49,10 @@
     margin-bottom: 10px;
     text-align: center;
     margin-top: -20px;
+    display: none;
+    @media #{$media-mobile} {
+        display: block;
+    }
 }
 
 .owlPage {
@@ -63,7 +71,9 @@
 }
 
 .centered {
-        display: flex;
+        display: block;
         justify-content: center;
-    
+        @media #{$media-mobile} {
+            display: flex;
+        }
 }

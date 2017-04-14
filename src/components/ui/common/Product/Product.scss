@@ -73,10 +73,12 @@
 }
 
 .leftColumn {
-    align-items: center;
-    justify-content: center;
+    align-items: stretch;
+    justify-content: stretch;
     max-width: 46%;
     @media #{$media-phone} {
+        align-items: center;
+        justify-content: center;
         max-width: 100%;
     }
 

@@ -5,6 +5,7 @@ import { createPaginationLink } from '../../src/utils/pagination';
 import statusCodes from '../../src/constants/statusCodes';
 import assets from './assets';
 import { siteName } from './config';
+import CDN from './middleware/cdn';
 
 class ServerContext extends Context {
     constructor({ req, res }) {
@@ -25,7 +26,8 @@ class ServerContext extends Context {
             description: '',
             css: '',
             body: '',
-            entry: assets.main.js
+            entry: assets.main.js,
+            cdn: CDN
         };
     }
 

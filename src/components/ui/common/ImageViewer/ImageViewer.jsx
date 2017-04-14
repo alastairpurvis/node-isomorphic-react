@@ -117,9 +117,8 @@ class ImageViewer extends Component {
         return (
             <div className={cx(s.root, this.props.className)}>
                 {this.renderViewer()}
-                {this.isDesktop
-                    ? this.renderPreviews()
-                    : this.renderPagination()}
+                {this.renderPreviews()}
+                {this.renderPagination()}
             </div>
         );
     }

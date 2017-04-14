@@ -35,14 +35,12 @@ export default {
     },
 
     get(context, { id }) {
-        context.executeAction('progress/show', 'cart-get');
 
         return service({
             path: `/carts/${id}`,
             method: 'GET'
         })
             .then(data => context.dispatch(actionTypes.CART_LOAD, data))
-            .finally(() => context.executeAction('progress/hide', 'cart-get'));
     },
 
     addProduct(context, params) {

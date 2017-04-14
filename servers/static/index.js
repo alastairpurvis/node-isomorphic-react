@@ -2,6 +2,7 @@ import 'babel-polyfill';
 import express from 'express';
 import secure from 'express-force-https';
 import apicache from 'apicache';
+import compression from 'compression';
 import path from 'path';
 import useragent from 'express-useragent';
 import cookieParser from 'cookie-parser';
@@ -29,11 +30,7 @@ if(process.env.NODE_ENV == 'production'){
     server.use(cache('2 weeks'));
 }
 
-server.get('*.js', function (req, res, next) {
-  req.url = req.url + '.gz';
-  res.set('Content-Encoding', 'gzip');
-  next();
-});
+server.use(compression());
 server.use(express.static(path.join(__dirname, 'public'), {
     maxAge: CACHE_MAX_AGE
 }));

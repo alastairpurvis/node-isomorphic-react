@@ -11,6 +11,7 @@ import { SIZE_SMALL } from '../../../../constants/icon';
 import watchStores from '../../../../utils/decorators/watchStores';
 import cx from 'classnames';
 import { reduce } from 'lodash';
+import { CDNname } from '../../../../config'
 
 @withStyles(s)
 @watchStores(
@@ -80,7 +81,7 @@ class Header extends Component {
                     {this.props.showBackIcon ? this.renderBackIcon() : this.renderMenuIcon()}
                 </div>
                 <Link to='/'>
-                    <Image className={s.logo} src='/images/logo-white.svg' />
+                    <Image className={s.logo} src={CDNname + '/images/logo-white.svg'} />
                 </Link>
                 <div className={s.rightIconsBlock}>
                     <Link

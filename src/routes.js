@@ -85,6 +85,8 @@ const router = new Router(on => {
 
     on(routes.HOME, async() => <HomePage />);
 
+    on(routes.INDEX, async() => <HomePage />);
+
     on(routes.LOGIN, async() => <LoginPage />);
 
     on(routes.REGISTER, async() => <RegisterPage />);

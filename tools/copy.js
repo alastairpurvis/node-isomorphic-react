@@ -12,7 +12,9 @@ async function copy({ watch } = {}) {
 
     await Promise.all([
         ncp('servers/static/public', 'build/public'),
+        ncp('servers/static/firebase', 'build/'),
         ncp('src/images', 'build/public/images'),
+        ncp('src/fonts', 'build/public/fonts'),
         ncp('src/content', 'build/content'),
         ncp('package.json', 'build/package.json'),
         ncp('servers/api/email', 'build/email')

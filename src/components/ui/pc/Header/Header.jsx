@@ -9,6 +9,7 @@ import Container from '../../common/Container';
 import Navigation from '../Navigation';
 import CartPreview from '../../common/CartPreview';
 import Separator from '../../common/Separator';
+import { CDNname } from '../../../../config'
 
 @withStyles(s)
 class Header extends Component {
@@ -23,7 +24,7 @@ class Header extends Component {
                     <div className={cx(s.row, s.spaceBetween, s.center, s.high)}>
                     <div className={cx(s.one, s.contentLeft)}>
                         <Link to='/'>
-                            <Image className={s.logo}src='/images/logo-white.svg' />
+                            <Image className={s.logo} src={CDNname + '/images/logo-white.svg'} />
                         </Link>
                     </div>
                         <div className={cx(s.row, s.equal, s.contentLeft)}>
