@@ -7,7 +7,6 @@ import allowMethods from './middleware/allowMethods';
 import email from './middleware/email';
 import mountStoreApi from './middleware/store';
 import serversConfig from '../config';
-import invoice from './middleware/invoice';
 
 const server = global.server = express();
 //apicache.options({ debug: true })
@@ -23,9 +22,6 @@ server.get('/api/categories/', cache('2 weeks'));
 server.get('/api/product/', cache('2 weeks'));
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
-
-server.use('/api/email', email);
-server.use('/api/invoice', invoice);
 
 mountStoreApi(server);
 

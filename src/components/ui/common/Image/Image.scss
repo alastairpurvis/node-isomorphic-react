@@ -15,12 +15,12 @@
 .productThumb {
     @extend .product-thumbnail;
     @media #{$media-mobile} {
-        max-height: 205px;
+        height: 205px;
         width: auto;
     }
     @media #{$media-phone} {
-        max-height: 190px;
-        width: auto;
+        height: 190px;
+        width: autu;
     }
     @media #{$media-desktop} {
         height: 235px;
@@ -39,6 +39,7 @@
     }
     @media #{$media-phone} {
         min-width: 1px;
+        min-height: 140px;
         max-height: 340px !important;
     }
     @media #{$media-phone-mini} {

@@ -3,5 +3,5 @@ import { baseUrl } from '../../config';
 
 export default (path = '/') => {
 
-    return fetch(baseUrl + path);
+    return fetch(path);
 };

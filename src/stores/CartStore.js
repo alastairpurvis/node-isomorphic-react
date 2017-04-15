@@ -13,6 +13,7 @@ class CartStore extends Store {
         [actionTypes.CART_CLEAR]: 'cartClear',
         [actionTypes.CART_ITEM_QUANT_CHANGE]: 'quantChanged',
         [actionTypes.CART_PRODUCT_ADD]: 'cartProductAdd',
+        [actionTypes.CART_PRODUCT_ADD_REMOVE]: 'cartProductAddRemove',
         [actionTypes.CART_PRODUCT_SYNC]: 'cartSyncId',
         [actionTypes.CART_PRODUCT_REMOVE]: 'cartProductRemove',
     };
@@ -107,6 +108,34 @@ class CartStore extends Store {
 
             this.emit('change');
         }
+    }
+
+    cartProductAddRemove({ product, fakeData, ...data}) {
+        if (this.cartId === data.cart_id) {
+            let variantObj = {};
+
+            if (data.variant_id) {
+                const variant = find(product.variants, { id: data.variant_id });
+
+                if (variant) {
+                    variantObj = { variant };
+                }
+            }
+
+            this.productsById[data.id] = {
+                ...data,
+                product,
+                ...variantObj
+            };
+            
+            this.total += data.price;
+        }
+        if (this.cartId === fakeData.cart_id && this.productsById[fakeData.id]) {
+            delete this.productsById[fakeData.id];
+            this.total -= fakeData.price_total;
+        
+        }
+        this.emit('change');
     }
 
     cartProductRemove(data) {

@@ -46,8 +46,9 @@
 
 .logo {
     @extend .unselectable;
-    width: 58% !important;
-    max-width: 320px;
+    width: 64% !important;
+    max-width: 50px;
+    opacity: 0.7;
     display: inline-block;
     height: 40px;
     text-align:center;

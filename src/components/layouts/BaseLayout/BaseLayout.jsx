@@ -13,7 +13,7 @@ import cx from 'classnames';
 
 const
     MASK_OPACITY = 0.2,
-    FULL_SCREEN_WIDTH = '-100vw';
+    FULL_SCREEN_WIDTH = '-100.1vw';
 
 @withStyles(s)
 class BaseLayout extends Component {

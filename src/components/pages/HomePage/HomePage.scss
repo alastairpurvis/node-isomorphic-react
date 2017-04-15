@@ -1,6 +1,38 @@
 @import '../../styles/common';
 @import '../../styles/extends/ui.scss';
 
+.root {
+	max-width: $max-content-width;
+	align-items: stretch;
+	margin: auto;
+	animation: fadein 0.8s;
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+.hidden {
+    @media #{$media-phone} {
+       display: none;
+	   opacity: 0;
+    }  
+}
+
+.fullWidth {
+    @media #{$media-desktop} {
+        max-width: 93%;
+    }
+
+    @media #{$media-desktop-large} {
+        max-width: 93%;
+    }
+}
+
 .hero {
 	background-image: url('#{$CDN}/images/homepage-hero.jpg');
 	background-color: #c7e5e7;
@@ -11,25 +43,64 @@
     display: flex;
     align-items: center;
     @media #{$media-mobile} {
-        height: 450px;
-        background-position: left center;
+		justify-content: center;
+		min-height: 450px;
+		height: 100%;
 		background-image: none;
-    }
+	}
     @media #{$media-desktop-dambo} {
         height: 60vh;
     }
+ @media #{$media-phone-minimum} {
+	 min-height: calc(100vh - 120px);
+ }
 }
+.hero:before {
+    content: ' ';
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 514px;
+    z-index: 1;
+    opacity: 0.2;
+    @media #{$media-mobile} {
+		display: block;
+        background-position: center bottom;
+		background-repeat: no-repeat;
+		background-image: url('#{$CDN}/images/banner-skincare.svg');
+		background-size: 75%;
+    }
+    @media #{$media-phone} {
+        background-position: center 120%;
+		background-size: 120%;
+    }
+
+}
+
 .content {
+  z-index: 2;
   -ms-flex-preferred-size: 38%;
   flex-basis: 38%;
   max-width: 440px;
-  margin-top: -30px;
   margin-left: 10%;
     @media #{$media-mobile} {
-        -ms-flex-preferred-size: 80%;
-        flex-basis: 80%;
-        max-width: 80%;
+        -ms-flex-preferred-size: 70%;
+        flex-basis: 70%;
+        max-width: 70%;
+		margin:auto;
+		display: flex;
+		flex-direction: column;
     }
+ @media #{$media-phone} {
+	text-align: center;
+  align-items: center;
+  justify-content: center;
+ }
+ @media #{$media-phone-minimum} {
+	 min-height: 380px;
+ }
 }
 
 .header {
@@ -37,13 +108,58 @@
     color: $gray-extra-dark-color;
     line-height: 40px;
     margin-bottom:-10px;
+    @media #{$media-mobile} {
+		font-size: 24px;
+	}
+}
+
+.heading {
+	display: none;
+	@media #{$media-desktop} {
+		display: block;
+	}
+}
+
+.logo {
+    max-width: 300px;
+    opacity: 0.7;
+	padding-bottom: 5px;
+    @media #{$media-phone} {
+		display: flex;
+		margin: auto;
+		max-width: 90%;
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+	}
+    @media #{$media-phone-minimum} {
+		max-width: 96%;
+	}
+    @media #{$media-desktop} {
+		display: none;
+	}
 }
 
 .subheader {
-    color: $gray-extra-dark-color;
     font-size: 18px;
     line-height: 30px;
     font-weight: 300;
+    @media #{$media-mobile} {
+		max-width: 400px;
+	}
+}
+
+.button {
+    @media #{$media-mobile} {
+		max-width: 400px;
+		margin-bottom: 45px;
+	}
+}
+
+.banner-graphic svg {
+	color: white;
+	fill: white;
+
 }
 
 .honey {

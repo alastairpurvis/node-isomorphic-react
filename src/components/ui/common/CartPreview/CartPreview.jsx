@@ -85,7 +85,7 @@ class CartPreview extends Component {
                         color={s.cartIconColor}
                         size={SIZE_NAV}
                     />
-                    <span className={s.cartQty}>{productLength ? '(' + productLength + ')' : ''}</span></Link>
+                    {productLength ? <span className={s.cartQty}>({productLength})</span> : ''}</Link>
                     </div>
                 </div>
             </div>

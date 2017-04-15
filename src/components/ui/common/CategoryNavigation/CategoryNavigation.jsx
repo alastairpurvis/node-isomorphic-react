@@ -40,9 +40,11 @@ class CategoryNavigation extends Component {
                 to={link.to}
                 key={link.name}
                 name={link.name}
-                className={cx(s.link, ((currentNav == link.name) ? s[activeClass] : ''))}
-                wrapperClassName={s.linkWrapper}
-            />
+            >
+                <div className={cx(s.link, ((currentNav == link.name) ? s[activeClass] : ''))}>
+                    {link.name}
+                </div>
+            </Link>
         ));
     }
 

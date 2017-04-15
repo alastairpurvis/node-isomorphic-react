@@ -19,6 +19,17 @@
         width: 25%;
 
     }
+    animation: fadein 1.2s;
+}
+
+.fullWidth {
+    @media #{$media-desktop} {
+        max-width: 93%;
+    }
+
+    @media #{$media-desktop-large} {
+        max-width: 93%;
+    }
 }
 
 .info {

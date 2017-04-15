@@ -19,6 +19,7 @@ import Promise from 'bluebird';
 import Social from '../SocialNetworks';
 import { SIZE_EXTRA_SMALL } from '../../../../constants/icon';
 import { routes } from '../../../../config';
+import Price from '../../common/Price';
 
 
 @withStyles(s)
@@ -146,6 +147,12 @@ class Product extends Component {
                     >
                         <ProductInfo product={product} />
                         <div className={s.addToCartContainer}>
+                        <div className={s.price}>
+                            <Price
+                                amount={product.price}
+                                currency={product.currency}
+                            />
+                        </div>
                         <Button fat className={s.addToCart} onClick={this.handleAddProduct}>Add to cart</Button>
                         </div>
                         <Separator className={s.margin} />

@@ -1,0 +1,10 @@
+{
+  "data": {
+    "content": {
+      "path": "support",
+      "title": "Customer Support",
+      "content": "<div><div><p>Information how we support customers</p></div></div>",
+      "component": "ContentPage"
+    }
+  }
+}

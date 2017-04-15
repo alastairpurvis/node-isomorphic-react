@@ -5,6 +5,7 @@ import Row from '../../ui/common/Row';
 import Column from '../../ui/common/Column';
 import Link from '../../ui/common/Link';
 import s from './HomePage.scss';
+import cx from 'classnames';
 import Button from '../../ui/common/Button';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { COLOR_CAT} from '../../../constants/colors';
@@ -26,18 +27,19 @@ class HomePage extends Component {
 
     render() {
         return (
-            <div>
+            <div className={s.root}>
                 <Row>
                     <div className={s.hero}>
                         <div className={s.content}>
                             <h1 className={s.header}>
-                                Personalized Skincare
+                                <span className={s.heading}>Personalized Skincare</span>
+                                <Image className={s.logo} src={CDNname + '/images/logo-full.svg'} />
                             </h1>
                             <h4 className={s.subheader}>
                                 Simple, powerful skincare free of harsh chemicals with only the best ingredients on the market.
                             </h4>
                             <Link to='/products/all-products'>
-                                <Button cat color={COLOR_CAT}>
+                                <Button className={s.button} cat color={COLOR_CAT}>
                                     Shop Now
                                 </Button>
                             </Link>
@@ -46,7 +48,7 @@ class HomePage extends Component {
                 </Row>
                 <Row weak>
                     <Column>
-                    <figure className={s.honey}>
+                    <figure className={cx(s.honey, s.hidden)}>
                         <Link to='/products/all-products'>
                             <Image src={CDNname + '/images/tile1.jpg'} />
                             <figcaption>
@@ -56,7 +58,7 @@ class HomePage extends Component {
                     </figure>
                     </Column>
                     <Column>
-                    <figure className={s.honey}>
+                    <figure className={cx(s.honey, s.hidden)}>
                         <Link to='/products/all-products'>
                             <Image src={CDNname + '/images/tile2.jpg'} />
                             <figcaption>
@@ -66,7 +68,7 @@ class HomePage extends Component {
                     </figure>
                     </Column>
                     <Column>
-                    <figure className={s.honey}>
+                    <figure className={cx(s.honey, s.hidden)}>
                         <Link to='/products/all-products'>
                             <Image src={CDNname + '/images/tile3.jpg'} />
                             <figcaption>

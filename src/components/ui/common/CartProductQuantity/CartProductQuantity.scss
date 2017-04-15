@@ -50,7 +50,5 @@
 }
 
 .control {
-    @media #{$media-desktop} {
         display: none;
-    }
 }

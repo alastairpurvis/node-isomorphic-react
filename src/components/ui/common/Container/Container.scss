@@ -8,6 +8,7 @@
     @media #{$media-desktop-large} {
         max-width: 940px;
     }
+    animation: fadein 0.5s;
 }
 
 .fullWidth {

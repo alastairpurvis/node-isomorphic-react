@@ -67,15 +67,11 @@ export default {
                 variant_id: params.variant_id
             }
         })
-        .then(
-            function (data) {
-                context.dispatch(actionTypes.CART_PRODUCT_REMOVE, fakeData); 
-                return data;
-            })
-        .then(data => context.dispatch(actionTypes.CART_PRODUCT_ADD, {
+        .then(data => (context.dispatch(actionTypes.CART_PRODUCT_ADD_REMOVE, {
                 product: params.product,
+                fakeData,
                 ...data
-            }))
+            })))
     },
 
     changeProductCount(context, { cart_id, product_id, variant_id, quantity }) {

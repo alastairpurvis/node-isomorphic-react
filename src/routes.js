@@ -15,7 +15,7 @@ import ForgottenPasswordPage from './components/pages/ForgottenPasswordPage';
 import ResetPasswordPage from './components/pages/ResetPasswordPage';
 import CartPage from './components/pages/CartPage';
 import CheckoutSuccessPage from './components/pages/CheckoutSuccessPage';
-import { routes } from './config';
+import { routes, CDNname, production } from './config';
 import statusCodes from './constants/statusCodes';
 import staticService from './services/static';
 import { isEmpty } from 'lodash';
@@ -115,12 +115,13 @@ const router = new Router(on => {
 
     on('*', async({ path, context }) => {
         context.executeAction('progress/show');
-        const
-            query = `/graphql?query={content(path:"${path}"){path,title,content,component}}`,
+
+        const jsonpath = path.replace(/\\/g, ''),
+            query = production ? `${CDNname}/content${jsonpath}.json` : `${CDNname}/graphql?query={content(path:"${path}"){path,title,content,component}}`,
             response = await staticService(query),
             { data } = await response.json();
             await context.executeAction('progress/hide');
-
+            
         return data && data.content && <ContentPage {...data.content} />;
     });
 

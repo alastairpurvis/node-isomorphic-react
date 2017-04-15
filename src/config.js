@@ -1,9 +1,10 @@
 import { canUseDOM } from './utils/env';
 
-export const
-    HOST = process.env.HOST || process.env.BASE_URI || (canUseDOM && window.env && window.env.HOST) || 'https://skinmoderne-client.appspot.com',
+export const 
+    production = true,
+    HOST = process.env.HOST || process.env.BASE_URI || (canUseDOM && window.env && window.env.HOST) || production ? 'https://skinmoderne-client.appspot.com' : 'http://localhost:5000',
     PORT = process.env.PORT || 8080,
-    CDNname = 'https://skinmodernep-cdn.firebaseapp.com',
+    CDNname = production ? 'https://skinmodernep-cdn.firebaseapp.com' : 'http://localhost:5000',
     api = {
         URL: 'https://skinmoderne-api.appspot.com',
         VERSION: '/api'

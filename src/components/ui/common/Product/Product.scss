@@ -27,6 +27,12 @@
     }
     @media #{$media-phone} {
         width:100%;
+        display: flex;
+        position:fixed;
+        bottom: 0;
+        left: 0;
+        text-align:left;
+        justify-content: center;
     }
 }
 
@@ -35,6 +41,23 @@
     @media #{$media-mobile} {
         justify-content: center;
         alignitems: center;
+    }
+    @media #{$media-phone} {
+        display: inline-block;
+        width:75%;
+        text-align:center;
+    }
+}
+
+.price {
+    display: inline-block;
+    padding: 20px;
+    @media #{$media-phone} {
+        background-color: $gray-light-color;
+        height: 100%;
+        width:25%;
+        color: black;
+        text-align:center;
     }
 }
 

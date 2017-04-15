@@ -133,7 +133,8 @@ const
                     compress: {
                         screw_ie8: true,
                         warnings: VERBOSE
-                    }
+                    },
+                    output: {comments: false}
                 }),
                 new webpack.optimize.AggressiveMergingPlugin(), new CompressionPlugin({
                     asset: "[path].gz[query]",

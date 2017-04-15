@@ -40,6 +40,7 @@ export default keyMirror({
     CART_CLEAR: null,
     CART_LOAD: null,
     CART_PRODUCT_ADD: null,
+    CART_PRODUCT_ADD_REMOVE: null,
     CART_PRODUCT_REMOVE: null,
     CART_ITEM_QUANT_CHANGE: null,
 

@@ -12,12 +12,6 @@ const ProductInfo = ({ product, className }) =>
         <div className={cx(s.smartAlign, s.sku)}>
             {product.summary}
         </div>
-        <Price
-            className={cx(s.smartAlign, s.price)}
-            amount={product.price}
-            currency={product.currency}
-        />
-        <br/>
     </section>;
 
 export default withStyles(s)(ProductInfo);

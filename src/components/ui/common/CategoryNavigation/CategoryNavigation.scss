@@ -10,9 +10,10 @@
     @extend .flex-row;
     height: 70px;
     margin: 0 10% 0 10%;
+    max-width: $max-content-width;
     @media #{$media-mobile} {
-            height: 100%;
-            padding: 6px 5px 18px 5px;
+            height: 60px;
+            padding: 0px 5px 0px 5px;
             margin: 0;
             overflow-x: scroll;
             flex-shrink: 0;
@@ -52,32 +53,28 @@
 
 .link {
     @extend .unselectable;
-    line-height:25px;
     letter-spacing: 1px;
     font-weight: 300;
     font-size: 14px;
+    height: 100%;
     @extend .default-link;
     &:hover {
-       @extend .default-link-hover;
+       background-color: $gray-light-color;
     }
-}
-
-.active {
-    font-weight: 600;
-    color: $blue-color;
-}
-
-.linkWrapper {
     padding: 0 20px 0 20px;
-
-    &:first-child {
-        padding-left: 0;
-    }
+    line-height: 70px;
+    padding-bottom: 1px;
 
     @media #{$media-mobile} {
-        padding: 12px 15px 0px 15px;
+        line-height: 58px;
+        white-space: nowrap;
     }
     @media #{$media-mobile} {
             flex-shrink: 0;
     }
+}
+.active {
+    color: $blue-color;
+    border-bottom: 2px solid $blue-color;
+    padding-bottom: 0 !important;
 }
